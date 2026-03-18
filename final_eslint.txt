@@ -1,0 +1,42 @@
+
+C:\Users\panchal kamlesh\Downloads\Shree Ganesh\shree-ganesh-engimach\app\gallery\GalleryClient.tsx
+  43:6  warning  React Hook useEffect has missing dependencies: 'next' and 'prev'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\panchal kamlesh\Downloads\Shree Ganesh\shree-ganesh-engimach\app\infrastructure\page.tsx
+  2:8   warning  'Link' is defined but never used           @typescript-eslint/no-unused-vars
+  3:8   warning  'Image' is defined but never used          @typescript-eslint/no-unused-vars
+  4:10  warning  'FiCheckCircle' is defined but never used  @typescript-eslint/no-unused-vars
+  4:25  warning  'FiArrowRight' is defined but never used   @typescript-eslint/no-unused-vars
+  5:10  warning  'FaIndustry' is defined but never used     @typescript-eslint/no-unused-vars
+  5:22  warning  'FaCogs' is defined but never used         @typescript-eslint/no-unused-vars
+  5:30  warning  'FaMicroscope' is defined but never used   @typescript-eslint/no-unused-vars
+  5:44  warning  'FaWrench' is defined but never used       @typescript-eslint/no-unused-vars
+  5:54  warning  'FaBuilding' is defined but never used     @typescript-eslint/no-unused-vars
+  5:66  warning  'FaTruck' is defined but never used        @typescript-eslint/no-unused-vars
+
+C:\Users\panchal kamlesh\Downloads\Shree Ganesh\shree-ganesh-engimach\app\layout.tsx
+  236:9  warning  Custom fonts not added in `pages/_document.js` will only load for a single page. This is discouraged. See: https://nextjs.org/docs/messages/no-page-custom-font  @next/next/no-page-custom-font
+
+C:\Users\panchal kamlesh\Downloads\Shree Ganesh\shree-ganesh-engimach\app\products\ProductsClient.tsx
+  5:20  warning  'FiFilter' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\panchal kamlesh\Downloads\Shree Ganesh\shree-ganesh-engimach\components\home\HeroSection.tsx
+  28:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\panchal kamlesh\Downloads\Shree Ganesh\shree-ganesh-engimach\components\home\HeroSection.tsx:28:5
+  26 |       isPrimary: i % 3 === 0,
+  27 |     }));
+> 28 |     setParticles(generatedParticles);
+     |     ^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  29 |
+  30 |     const handleScroll = () => {
+  31 |       if (parallaxRef.current) {  react-hooks/set-state-in-effect
+
+✖ 14 problems (1 error, 13 warnings)
+
