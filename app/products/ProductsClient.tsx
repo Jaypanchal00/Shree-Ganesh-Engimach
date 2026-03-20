@@ -35,6 +35,25 @@ export default function ProductsClient() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const inView = useInView(sectionRef);
 
+  // Filter based on URL hash (to make footer links work properly)
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace("#", "");
+      if (categories.some(c => c.id === hash)) {
+        setActiveCategory(hash);
+        // Page load ke baad halka sa scroll karna taaki header se chhup na jaye
+        setTimeout(() => {
+          window.scrollTo({ top: 400, behavior: "smooth" });
+        }, 100);
+      }
+    };
+
+    handleHashChange(); // initial page load par check
+    window.addEventListener("hashchange", handleHashChange); // same page navigation pe check
+    
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
   const filtered = products.filter((p) => {
     const matchCat = activeCategory === "all" || p.category === activeCategory;
     const matchSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase()) || p.description.toLowerCase().includes(searchQuery.toLowerCase());
