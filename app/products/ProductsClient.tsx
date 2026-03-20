@@ -155,10 +155,14 @@ export default function ProductsClient() {
                     opacity: inView ? 1 : 0,
                     transform: inView ? "translateY(0)" : "translateY(20px)",
                     transition: `all 0.4s ease ${i * 0.07}s`,
+                    display: "flex",
+                    flexDirection: "column",
+                    height: "100%",
+                    background: "#ffffff",
                   }}
                 >
                   <div className="card-image-wrap">
-                    <Image src={product.image} alt={product.name} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" style={{ objectFit: "contain", padding: "20px" }} loading="lazy" />
+                    <Image src={product.image} alt={product.name} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" style={{ objectFit: "contain", padding: "16px", mixBlendMode: "multiply", backgroundColor: "white" }} loading="lazy" />
                     {product.badge && (
                       <div style={{ position: "absolute", top: "14px", left: "14px", background: product.badgeColor, color: "white", padding: "4px 12px", borderRadius: "50px", fontSize: "0.72rem", fontWeight: 700, fontFamily: "'Poppins', sans-serif" }}>
                         {product.badge}
@@ -166,14 +170,14 @@ export default function ProductsClient() {
                     )}
                   </div>
 
-                  <div style={{ padding: "24px" }}>
-                    <div style={{ display: "inline-block", background: "rgba(15,61,94,0.08)", color: "var(--primary)", padding: "3px 10px", borderRadius: "50px", fontSize: "0.72rem", fontWeight: 600, fontFamily: "'Poppins', sans-serif", letterSpacing: "0.5px", textTransform: "uppercase", marginBottom: "10px" }}>
+                  <div style={{ padding: "24px", display: "flex", flexDirection: "column", flex: 1 }}>
+                    <div style={{ display: "inline-block", background: "rgba(15,61,94,0.08)", color: "var(--primary)", padding: "4px 12px", borderRadius: "50px", fontSize: "0.75rem", fontWeight: 600, fontFamily: "'Poppins', sans-serif", letterSpacing: "0.5px", textTransform: "uppercase", marginBottom: "12px", alignSelf: "flex-start" }}>
                       {categories.find((c) => c.id === product.category)?.label}
                     </div>
-                    <h3 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "1.1rem", color: "var(--primary)", marginBottom: "10px" }}>
+                    <h3 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "1.2rem", color: "var(--primary)", marginBottom: "8px", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden", minHeight: "2.8rem", lineHeight: "1.4" }}>
                       {product.name}
                     </h3>
-                    <p style={{ color: "var(--text-secondary)", fontSize: "0.875rem", lineHeight: 1.7, marginBottom: "16px" }}>
+                    <p style={{ color: "var(--text-secondary)", fontSize: "0.875rem", lineHeight: 1.6, marginBottom: "20px", display: "-webkit-box", WebkitLineClamp: 4, WebkitBoxOrient: "vertical", overflow: "hidden", flex: 1 }}>
                       {product.description}
                     </p>
 
@@ -198,19 +202,18 @@ export default function ProductsClient() {
                       ))}
                     </div>
 
-                    <div style={{ display: "flex", gap: "10px" }}>
-                      <Link href={`/products/${product.id}`} className="btn-blue" style={{ padding: "10px 18px", fontSize: "0.85rem", flex: 1, justifyContent: "center" }}>
+                    <div style={{ display: "flex", gap: "12px", marginTop: "auto" }}>
+                      <Link href={`/products/${product.id}`} className="btn-blue" style={{ flex: 1, justifyContent: "center", padding: "12px 20px" }}>
                         View Details
                       </Link>
                       <a
                         href={`https://wa.me/919725397262?text=Hello%2C%20I%20am%20interested%20in%20${encodeURIComponent(product.name)}.`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        style={{ display: "flex", alignItems: "center", justifyContent: "center", background: "#25D366", color: "white", width: "42px", borderRadius: "10px", textDecoration: "none", fontSize: "1.2rem", flexShrink: 0, transition: "all 0.3s ease" }}
-                        onMouseOver={(e) => (e.currentTarget as HTMLElement).style.background = "#1db954"}
-                        onMouseOut={(e) => (e.currentTarget as HTMLElement).style.background = "#25D366"}
+                        className="whatsapp-btn-hover"
+                        style={{ display: "flex", alignItems: "center", justifyContent: "center", background: "#25D366", color: "white", width: "48px", borderRadius: "10px", textDecoration: "none", fontSize: "1.2rem", flexShrink: 0, transition: "all 0.3s ease" }}
                       >
-                        <FaWhatsapp />
+                        <FaWhatsapp size={22} />
                       </a>
                     </div>
                   </div>

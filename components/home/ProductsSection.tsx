@@ -50,11 +50,15 @@ export default function ProductsSection() {
                 opacity: inView ? 1 : 0,
                 transform: inView ? "translateY(0)" : "translateY(30px)",
                 transition: `all 0.5s ease ${i * 0.1}s`,
+                display: "flex",
+                flexDirection: "column",
+                height: "100%",
+                background: "#ffffff",
               }}
             >
               {/* Image */}
               <div className="card-image-wrap">
-                <Image src={product.image} alt={product.name} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" style={{ objectFit: "contain", padding: "20px" }} />
+                <Image src={product.image} alt={product.name} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" style={{ objectFit: "contain", padding: "16px", mixBlendMode: "multiply", backgroundColor: "white" }} />
                 <div className="card-overlay">
                   <Link
                     href={`/products/${product.id}`}
@@ -93,19 +97,20 @@ export default function ProductsSection() {
               </div>
 
               {/* Content */}
-              <div style={{ padding: "24px" }}>
+              <div style={{ padding: "24px", display: "flex", flexDirection: "column", flex: 1 }}>
                 <div style={{
                   display: "inline-block",
                   background: "rgba(15,61,94,0.08)",
                   color: "var(--primary)",
-                  padding: "3px 10px",
+                  padding: "4px 12px",
                   borderRadius: "50px",
-                  fontSize: "0.72rem",
+                  fontSize: "0.75rem",
                   fontWeight: 600,
                   fontFamily: "'Poppins', sans-serif",
                   letterSpacing: "0.5px",
                   textTransform: "uppercase",
-                  marginBottom: "10px",
+                  marginBottom: "12px",
+                  alignSelf: "flex-start",
                 }}>
                   {product.category}
                 </div>
@@ -114,53 +119,68 @@ export default function ProductsSection() {
                   fontWeight: 700,
                   fontSize: "1.2rem",
                   color: "var(--primary)",
-                  marginBottom: "10px",
+                  marginBottom: "8px",
+                  display: "-webkit-box",
+                  WebkitLineClamp: 2,
+                  WebkitBoxOrient: "vertical",
+                  overflow: "hidden",
+                  minHeight: "2.8rem",
+                  lineHeight: "1.4"
                 }}>
                   {product.name}
                 </h3>
-                <p style={{ color: "var(--text-secondary)", fontSize: "0.875rem", lineHeight: 1.7, marginBottom: "16px" }}>
+                <p style={{
+                  color: "var(--text-secondary)",
+                  fontSize: "0.875rem",
+                  lineHeight: 1.6,
+                  marginBottom: "20px",
+                  display: "-webkit-box",
+                  WebkitLineClamp: 4,
+                  WebkitBoxOrient: "vertical",
+                  overflow: "hidden",
+                  flex: 1
+                }}>
                   {product.description}
                 </p>
 
                 {/* Specs */}
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginBottom: "20px" }}>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "24px" }}>
                   {Object.entries(product.specs).slice(0, 3).map(([key, val], j) => (
                     <span key={j} style={{
                       background: "var(--bg-secondary)",
                       color: "var(--text-secondary)",
-                      padding: "4px 10px",
+                      padding: "6px 12px",
                       borderRadius: "6px",
                       fontSize: "0.75rem",
                       fontFamily: "'Inter', sans-serif",
                       border: "1px solid var(--border)",
                     }}>
-                      {key}: {val}
+                      {val}
                     </span>
                   ))}
                 </div>
 
-                <div style={{ display: "flex", gap: "10px" }}>
-                  <Link href={`/products/${product.id}`} className="btn-blue" style={{ padding: "10px 20px", fontSize: "0.85rem", flex: 1, justifyContent: "center" }}>
+                <div style={{ display: "flex", gap: "12px", marginTop: "auto" }}>
+                  <Link href={`/products/${product.id}`} className="btn-blue" style={{ flex: 1, justifyContent: "center", padding: "12px 20px" }}>
                     View Details
                   </Link>
                   <a
                     href={`https://wa.me/919725397262?text=Hello%2C%20I%20am%20interested%20in%20${encodeURIComponent(product.name)}.`}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="whatsapp-btn-hover"
                     style={{
                       display: "flex", alignItems: "center", justifyContent: "center",
                       background: "#25D366",
                       color: "white",
-                      width: "42px", borderRadius: "10px",
+                      width: "48px", borderRadius: "10px",
                       textDecoration: "none",
-                      fontSize: "1.1rem",
+                      fontSize: "1.2rem",
                       flexShrink: 0,
                       transition: "all 0.3s ease",
                     }}
-                    onMouseOver={(e) => (e.currentTarget as HTMLElement).style.background = "#1db954"}
-                    onMouseOut={(e) => (e.currentTarget as HTMLElement).style.background = "#25D366"}
                   >
-                    <FaWhatsapp size={20} />
+                    <FaWhatsapp size={22} />
                   </a>
                 </div>
               </div>
