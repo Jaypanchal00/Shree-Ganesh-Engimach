@@ -18,12 +18,12 @@ function useInView(ref: React.RefObject<HTMLElement | null>) {
 }
 
 const galleryItems = [
-  { src: "/factory-interior.png", alt: "Factory Interior", label: "Manufacturing Floor", category: "Facility" },
-  { src: "/filling-machine.png", alt: "Filling Machine", label: "Automatic Filling Line", category: "Machine" },
-  { src: "/capping-machine.png", alt: "Capping Machine", label: "Precision Capping Line", category: "Machine" },
-  { src: "/washing-machine.png", alt: "Washing Machine", label: "High-Speed Bottle Washer", category: "Machine" },
-  { src: "/labeling-machine.png", alt: "Labeling Machine", label: "Rotary Labeling System", category: "Machine" },
-  { src: "/logo.png", alt: "Shree Ganesh Logo", label: "Our Trusted Brand", category: "Branding" },
+  { src: "/real-filling-machine.jpeg", alt: "Automatic Liquid Filling Machine", label: "Automatic Liquid Filling Machine", category: "Machine" },
+  { src: "/real-capping-machine.jpeg", alt: "Inline Capping Machine", label: "Automatic Inline Capping Machine", category: "Machine" },
+  { src: "/real-ropp-capping.jpeg", alt: "ROPP Capping Machine", label: "Rotary ROPP Capping Machine", category: "Machine" },
+  { src: "/real-screw-capping.jpeg", alt: "Screw Capping Machine", label: "Screw Cap Closing Machine", category: "Machine" },
+  { src: "/real-machine2.jpeg", alt: "Bottle Rinsing Machine", label: "Rotary Bottle Rinsing Machine", category: "Machine" },
+  { src: "/factory-interior.png", alt: "Manufacturing Facility", label: "Our Manufacturing Facility", category: "Facility" },
 ];
 
 export default function GallerySection() {

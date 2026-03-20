@@ -7,18 +7,18 @@ import { FiX, FiArrowLeft, FiArrowRight, FiGrid, FiList } from "react-icons/fi";
 const categories = ["All", "Factory Photos", "Manufacturing Unit", "Machinery", "Product Showcase"];
 
 const galleryData = [
-  { src: "/factory-interior.png", alt: "Factory Floor", category: "Factory Photos", title: "Main Manufacturing Floor" },
-  { src: "/filling-machine.png", alt: "Filling Machine", category: "Product Showcase", title: "Automatic Filling Machine" },
-  { src: "/capping-machine.png", alt: "Capping Machine", category: "Product Showcase", title: "Rotary Capping Machine" },
-  { src: "/washing-machine.png", alt: "Washing Machine", category: "Product Showcase", title: "Bottle Washing Machine" },
-  { src: "/labeling-machine.png", alt: "Labeling Machine", category: "Product Showcase", title: "Label Applicator Machine" },
-  { src: "/factory-interior.png", alt: "CNC Machine", category: "Manufacturing Unit", title: "CNC Machining Center" },
-  { src: "/filling-machine.png", alt: "Assembly Area", category: "Manufacturing Unit", title: "Machine Assembly Area" },
-  { src: "/capping-machine.png", alt: "Testing Lab", category: "Machinery", title: "Quality Control Lab" },
-  { src: "/factory-interior.png", alt: "Storage", category: "Factory Photos", title: "Finished Goods Storage" },
-  { src: "/labeling-machine.png", alt: "Servo Labeler", category: "Machinery", title: "Servo-Driven Labeler" },
-  { src: "/washing-machine.png", alt: "Rinser Detail", category: "Machinery", title: "Multi-Nozzle Rinser" },
-  { src: "/factory-interior.png", alt: "Work Area", category: "Manufacturing Unit", title: "Metal Fabrication Area" },
+  { src: "/real-filling-machine.jpeg", alt: "Automatic Liquid Filling Machine", category: "Product Showcase", title: "Automatic Liquid Filling Machine" },
+  { src: "/real-capping-machine.jpeg", alt: "Inline Capping Machine", category: "Product Showcase", title: "Automatic Inline Capping Machine" },
+  { src: "/real-ropp-capping.jpeg", alt: "ROPP Capping Machine", category: "Machinery", title: "Rotary ROPP Capping Machine" },
+  { src: "/real-screw-capping.jpeg", alt: "Screw Capping Machine", category: "Machinery", title: "Screw Cap Closing Machine" },
+  { src: "/real-capping-assembly.jpeg", alt: "Capping Assembly", category: "Manufacturing Unit", title: "Capping Head Assembly" },
+  { src: "/real-machine1.jpeg", alt: "Volumetric Filling Machine", category: "Product Showcase", title: "Volumetric Piston Filling Machine" },
+  { src: "/real-machine2.jpeg", alt: "Bottle Rinsing Machine", category: "Machinery", title: "Rotary Bottle Rinsing Machine" },
+  { src: "/real-giva-assembly.jpeg", alt: "Machine Assembly", category: "Manufacturing Unit", title: "Assembly & Fabrication Unit" },
+  { src: "/real-assembly.jpeg", alt: "Parts Assembly", category: "Manufacturing Unit", title: "Precision Parts Assembly" },
+  { src: "/real-capping-head.jpeg", alt: "Capping Head", category: "Machinery", title: "ROPP Capping Head Detail" },
+  { src: "/real-star-plate.jpeg", alt: "Star Wheel", category: "Machinery", title: "Star Wheel & Neck Guide" },
+  { src: "/factory-interior.png", alt: "Factory Interior", category: "Factory Photos", title: "Manufacturing Facility" },
 ];
 
 export default function GalleryClient() {

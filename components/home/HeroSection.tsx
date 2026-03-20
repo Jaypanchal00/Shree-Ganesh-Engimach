@@ -194,8 +194,8 @@ export default function HeroSection() {
                 }}
               >
                 <Image
-                  src="/filling-machine.png"
-                  alt="Bottle Filling Machine"
+                  src="/real-filling-machine.jpeg"
+                  alt="Automatic Liquid Filling Machine"
                   width={420}
                   height={380}
                   style={{ objectFit: "contain", filter: "drop-shadow(0 20px 40px rgba(230,57,70,0.2))" }}

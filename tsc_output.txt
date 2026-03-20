@@ -1,2 +1,0 @@
-app/api/contact/route.ts(2,24): error TS7016: Could not find a declaration file for module 'nodemailer'. 'C:/Users/panchal kamlesh/Downloads/Shree Ganesh/shree-ganesh-engimach/node_modules/nodemailer/lib/nodemailer.js' implicitly has an 'any' type.
-  Try `npm i --save-dev @types/nodemailer` if it exists or add a new declaration (.d.ts) file containing `declare module 'nodemailer';`

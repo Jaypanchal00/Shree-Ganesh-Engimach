@@ -121,16 +121,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
         </div>
       </section>
 
-      {/* Recommended products */}
-      <section className="section-padding" style={{ background: "var(--bg-secondary)" }}>
-          <div className="container-custom">
-            <h2 style={{ fontSize: "1.8rem", color: "var(--primary)", fontWeight: 700, marginBottom: "32px" }}>Related Solutions</h2>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "24px" }}>
-                {/* Simplified related products logic could go here */}
-                <p style={{ color: "var(--text-muted)" }}>Explore our other high-performance packaging machines designed for synchronization with this unit.</p>
-            </div>
-          </div>
-      </section>
+
     </>
   );
 }
