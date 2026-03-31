@@ -8,17 +8,17 @@ export default function InquiryCTA() {
     <section
       style={{
         position: "relative",
-        padding: "100px 0",
+        padding: "120px 0",
         overflow: "hidden",
-        background: "linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 40%, #2563EB 100%)",
+        background: "linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%)",
       }}
     >
       {/* Pattern */}
       <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 2px 2px, rgba(255,255,255,0.07) 1px, transparent 0)", backgroundSize: "40px 40px" }} />
 
       {/* Glow effects */}
-      <div style={{ position: "absolute", top: "-100px", right: "-100px", width: "400px", height: "400px", background: "radial-gradient(circle, rgba(37,99,235,0.3) 0%, transparent 70%)", borderRadius: "50%", pointerEvents: "none" }} />
-      <div style={{ position: "absolute", bottom: "-100px", left: "-100px", width: "400px", height: "400px", background: "radial-gradient(circle, rgba(17,24,39,0.4) 0%, transparent 70%)", borderRadius: "50%", pointerEvents: "none" }} />
+      <div style={{ position: "absolute", top: "-100px", right: "-100px", width: "400px", height: "400px", background: "radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%)", borderRadius: "50%", pointerEvents: "none" }} />
+      <div style={{ position: "absolute", bottom: "-100px", left: "-100px", width: "400px", height: "400px", background: "radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%)", borderRadius: "50%", pointerEvents: "none" }} />
 
       <div className="container-custom" style={{ position: "relative", zIndex: 1, textAlign: "center" }}>
         {/* Badge */}

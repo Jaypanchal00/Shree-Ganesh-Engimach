@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { FaTrophy, FaCogs, FaSmile, FaIndustry } from "react-icons/fa";
+import { FiSettings, FiUsers, FiHome, FiAward } from "react-icons/fi";
 
 function useInView(ref: React.RefObject<HTMLElement | null>) {
   const [inView, setInView] = useState(false);
@@ -44,10 +44,10 @@ function AnimatedCounter({ target, suffix = "", prefix = "" }: { target: number;
 }
 
 const stats = [
-  { target: 5, suffix: "+", label: "Years Experience", icon: <FaTrophy />, desc: "Serving the industry since 2019" },
-  { target: 500, suffix: "+", label: "Machines Delivered", icon: <FaCogs />, desc: "Across all major industries" },
-  { target: 200, suffix: "+", label: "Happy Clients", icon: <FaSmile />, desc: "Businesses trust our quality" },
-  { target: 1, suffix: "", label: "Manufacturing Unit", icon: <FaIndustry />, desc: "State-of-the-art facility" },
+  { target: 5, suffix: "+", label: "Years Experience", icon: <FiAward />, desc: "Since 2019", color: "#F59E0B" },
+  { target: 500, suffix: "+", label: "Machines Delivered", icon: <FiSettings />, desc: "Across India", color: "#3B82F6" },
+  { target: 200, suffix: "+", label: "Happy Clients", icon: <FiUsers />, desc: "Trusted by industries", color: "#10B981" },
+  { target: 1, suffix: "", label: "Manufacturing Unit", icon: <FiHome />, desc: "State-of-the-art", color: "#EC4899" },
 ];
 
 export default function StatsSection() {
@@ -58,8 +58,8 @@ export default function StatsSection() {
     <section
       ref={sectionRef}
       style={{
-        background: "linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, #1a5a8a 100%)",
-        padding: "80px 0",
+        background: "linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #1e40af 100%)",
+        padding: "100px 0",
         position: "relative",
         overflow: "hidden",
       }}
@@ -67,12 +67,17 @@ export default function StatsSection() {
       {/* Background Pattern */}
       <div style={{
         position: "absolute", inset: 0,
-        backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0)",
-        backgroundSize: "40px 40px",
+        backgroundImage: "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)",
+        backgroundSize: "60px 60px",
+        opacity: 0.5,
       }} />
 
-      {/* Red accent */}
-      <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "4px", background: "linear-gradient(90deg, var(--secondary), transparent, var(--secondary))" }} />
+      {/* Blue Glows */}
+      <div style={{ position: "absolute", top: "-100px", left: "-100px", width: "400px", height: "400px", background: "radial-gradient(circle, rgba(37,99,235,0.2) 0%, transparent 70%)", borderRadius: "50%", filter: "blur(40px)" }} />
+      <div style={{ position: "absolute", bottom: "-100px", right: "-100px", width: "400px", height: "400px", background: "radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%)", borderRadius: "50%", filter: "blur(40px)" }} />
+
+      {/* Top accent */}
+      <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "1px", background: "linear-gradient(90deg, transparent, rgba(59,130,246,0.3), transparent)" }} />
 
       <div className="container-custom" style={{ position: "relative", zIndex: 1 }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(clamp(140px, 45vw, 240px), 1fr))", gap: "clamp(16px, 3vw, 40px)" }}>
@@ -81,28 +86,40 @@ export default function StatsSection() {
               key={i}
               style={{
                 textAlign: "center",
-                padding: "32px 24px",
-                background: "rgba(255,255,255,0.06)",
-                borderRadius: "20px",
-                border: "1px solid rgba(255,255,255,0.1)",
-                backdropFilter: "blur(10px)",
-                transition: "all 0.35s ease",
+                padding: "40px 24px",
+                background: "rgba(255,255,255,0.04)",
+                borderRadius: "24px",
+                border: "1px solid rgba(255,255,255,0.08)",
+                backdropFilter: "blur(12px)",
+                transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
                 opacity: inView ? 1 : 0,
                 transform: inView ? "translateY(0)" : "translateY(30px)",
                 transitionDelay: `${i * 0.15}s`,
+                boxShadow: "inset 0 0 20px rgba(255,255,255,0.02)",
               }}
               onMouseOver={(e) => {
-                (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.1)";
-                (e.currentTarget as HTMLElement).style.transform = "translateY(-6px)";
-                (e.currentTarget as HTMLElement).style.boxShadow = "0 20px 40px rgba(0,0,0,0.2)";
+                (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.08)";
+                (e.currentTarget as HTMLElement).style.transform = "translateY(-10px)";
+                (e.currentTarget as HTMLElement).style.boxShadow = "0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255,255,255,0.05)";
+                (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.2)";
               }}
               onMouseOut={(e) => {
-                (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.06)";
+                (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.04)";
                 (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
-                (e.currentTarget as HTMLElement).style.boxShadow = "none";
+                (e.currentTarget as HTMLElement).style.boxShadow = "inset 0 0 20px rgba(255,255,255,0.02)";
+                (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.08)";
               }}
             >
-              <div style={{ display: "flex", justifyContent: "center", fontSize: "2.5rem", marginBottom: "16px", color: "var(--secondary)" }}>{stat.icon}</div>
+              <div style={{ 
+                display: "flex", 
+                justifyContent: "center", 
+                fontSize: "2.8rem", 
+                marginBottom: "20px", 
+                color: stat.color,
+                filter: `drop-shadow(0 0 10px ${stat.color}44)`
+              }}>
+                {stat.icon}
+              </div>
               <AnimatedCounter target={stat.target} suffix={stat.suffix} />
               <div style={{
                 color: "white",
