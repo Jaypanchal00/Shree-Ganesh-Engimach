@@ -228,11 +228,11 @@ export default function ProductsSection() {
         </div>
 
         {/* Precision Spares Highlight */}
-        <div style={{ marginTop: "100px", padding: "60px", background: "white", borderRadius: "40px", border: "1px solid rgba(15,61,94,0.06)", boxShadow: "0 40px 100px rgba(15,61,94,0.05)" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1.2fr 2fr", gap: "60px", alignItems: "center" }}>
+        <div className="precision-spares-card" style={{ marginTop: "100px", padding: "clamp(30px, 6vw, 60px)", background: "white", borderRadius: "40px", border: "1px solid rgba(15,61,94,0.06)", boxShadow: "0 40px 100px rgba(15,61,94,0.05)" }}>
+          <div className="precision-main-grid" style={{ display: "grid", gridTemplateColumns: "1.2fr 2fr", gap: " clamp(30px, 5vw, 60px)", alignItems: "center" }}>
             <div>
               <span className="section-badge" style={{ background: "rgba(15,61,94,0.05)", color: "var(--primary)" }}>Engineering Spares</span>
-              <h3 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 900, fontSize: "2rem", color: "var(--primary)", marginTop: "16px", marginBottom: "20px" }}>
+              <h3 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 900, fontSize: "clamp(1.5rem, 3vw, 2rem)", color: "var(--primary)", marginTop: "16px", marginBottom: "20px" }}>
                 High-Precision <span style={{ color: "var(--secondary)" }}>Components</span>
               </h3>
               <p style={{ color: "var(--text-secondary)", lineHeight: 1.8, marginBottom: "30px", fontSize: "1.05rem" }}>
@@ -242,12 +242,12 @@ export default function ProductsSection() {
                 Browse All Spares <FiArrowRight size={18} />
               </Link>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
+            <div className="precision-gallery-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
               {[
                 { src: encodeURI("/New 8.jpeg"), title: "Quality Manufacturing", fit: "contain" },
                 { src: encodeURI("/Factory5.jpeg"), title: "Quality Lab", fit: "cover" },
               ].map((img, idx) => (
-                <div key={idx} style={{ position: "relative", height: "180px", borderRadius: "16px", overflow: "hidden", background: "white", border: "1px solid var(--border)", boxShadow: "0 10px 25px rgba(0,0,0,0.05)" }}>
+                <div key={idx} style={{ position: "relative", height: "clamp(120px, 20vw, 180px)", borderRadius: "16px", overflow: "hidden", background: "white", border: "1px solid var(--border)", boxShadow: "0 10px 25px rgba(0,0,0,0.05)" }}>
                   <Image src={img.src} alt={img.title} fill style={{ objectFit: img.fit as any, padding: img.fit === "contain" ? "10px" : "0" }} />
                   <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "10px", background: "rgba(15,23,42,0.7)", backdropFilter: "blur(4px)", color: "white", fontSize: "0.75rem", fontWeight: 700, textAlign: "center" }}>
                     {img.title}
@@ -275,6 +275,20 @@ export default function ProductsSection() {
         }
         .product-card:hover .card-overlay-btn :global(.btn-primary) {
           transform: translateY(0) !important;
+        }
+        @media (max-width: 900px) {
+          .precision-main-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .precision-spares-card {
+            margin-top: 60px !important;
+            padding: 30px !important;
+          }
+        }
+        @media (max-width: 600px) {
+          .precision-gallery-grid {
+            grid-template-columns: 1fr !important;
+          }
         }
       `}</style>
     </section>
