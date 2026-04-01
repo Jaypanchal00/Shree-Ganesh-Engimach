@@ -68,9 +68,16 @@ export default function AboutClient() {
             </div>
 
             <div style={{ position: "relative" }}>
-              <div style={{ borderRadius: "24px", overflow: "hidden", boxShadow: "0 20px 60px rgba(0,0,0,0.15)" }}>
-                <Image src="/factory-interior.png" alt="Factory Interior" width={600} height={450} style={{ width: "100%", height: "auto", display: "block" }} />
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px" }}>
+              <div style={{ display: "grid", gap: "10px" }}>
+                <Image src="/Factory1.jpeg" alt="Factory Floor" width={300} height={400} style={{ width: "100%", height: "320px", objectFit: "cover", borderRadius: "24px", boxShadow: "0 10px 40px rgba(0,0,0,0.1)" }} />
+                <Image src="/Factory3.jpeg" alt="Assembly Unit" width={300} height={200} style={{ width: "100%", height: "180px", objectFit: "cover", borderRadius: "24px", boxShadow: "0 10px 40px rgba(0,0,0,0.1)" }} />
               </div>
+              <div style={{ display: "grid", gap: "10px", paddingTop: "30px" }}>
+                <Image src="/Factory2.jpeg" alt="Machinery" width={300} height={200} style={{ width: "100%", height: "180px", objectFit: "cover", borderRadius: "24px", boxShadow: "0 10px 40px rgba(0,0,0,0.1)" }} />
+                <Image src="/Factory4.jpeg" alt="Dispatch Area" width={300} height={400} style={{ width: "100%", height: "320px", objectFit: "cover", borderRadius: "24px", boxShadow: "0 10px 40px rgba(0,0,0,0.1)" }} />
+              </div>
+            </div>
               {/* Badge overlay */}
               <div style={{ position: "absolute", bottom: "-20px", left: "-20px", background: "var(--secondary)", color: "white", padding: "20px 24px", borderRadius: "16px", boxShadow: "0 8px 30px rgba(230,57,70,0.3)" }}>
                 <div style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 800, fontSize: "2.5rem", lineHeight: 1 }}>5+</div>

@@ -61,8 +61,15 @@ export default function InfrastructureClient() {
                 ))}
               </div>
             </div>
-            <div style={{ borderRadius: "24px", overflow: "hidden", boxShadow: "0 20px 60px rgba(0,0,0,0.15)" }}>
-              <Image src="/factory-interior.png" alt="Manufacturing Facility" width={600} height={450} style={{ width: "100%", height: "auto", display: "block" }} />
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px" }}>
+              <div style={{ display: "grid", gap: "10px" }}>
+                <Image src="/Factory1.jpeg" alt="Factory Floor" width={300} height={200} style={{ width: "100%", height: "200px", objectFit: "cover", borderRadius: "16px", boxShadow: "0 10px 30px rgba(0,0,0,0.1)" }} />
+                <Image src="/Factory2.jpeg" alt="Assembly Unit" width={300} height={250} style={{ width: "100%", height: "250px", objectFit: "cover", borderRadius: "16px", boxShadow: "0 10px 30px rgba(0,0,0,0.1)" }} />
+              </div>
+              <div style={{ display: "grid", gap: "10px" }}>
+                <Image src="/Factory3.jpeg" alt="Machinery" width={300} height={250} style={{ width: "100%", height: "250px", objectFit: "cover", borderRadius: "16px", boxShadow: "0 10px 30px rgba(0,0,0,0.1)" }} />
+                <Image src="/Factory4.jpeg" alt="Dispatch Area" width={300} height={200} style={{ width: "100%", height: "200px", objectFit: "cover", borderRadius: "16px", boxShadow: "0 10px 30px rgba(0,0,0,0.1)" }} />
+              </div>
             </div>
           </div>
 

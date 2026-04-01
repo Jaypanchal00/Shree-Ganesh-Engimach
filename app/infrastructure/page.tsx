@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     url: `${BASE_URL}/infrastructure`,
     images: [
       {
-        url: `${BASE_URL}/factory-interior.png`,
+        url: `${BASE_URL}/Factory1.jpeg`,
         width: 1200,
         height: 630,
         alt: "Shree Ganesh Engimach Manufacturing Facility - CNC Machining Center Ahmedabad",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Manufacturing Infrastructure | Shree Ganesh Engimach",
     description: "20,000 sq.ft facility with 12 CNC machines, quality lab & welding shop in Ahmedabad.",
-    images: [`${BASE_URL}/factory-interior.png`],
+    images: [`${BASE_URL}/Factory1.jpeg`],
   },
 };
 

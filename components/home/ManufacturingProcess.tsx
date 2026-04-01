@@ -7,7 +7,7 @@ function useInView(ref: React.RefObject<HTMLElement | null>) {
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) setInView(true);
-    }, { threshold: 0.1 });
+    }, { threshold: 0.05 });
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, [ref]);
@@ -90,15 +90,16 @@ export default function ManufacturingProcess() {
               className="timeline-item"
               style={{
                 opacity: inView ? 1 : 0,
-                transform: inView ? "translateX(0)" : "translateX(-30px)",
-                transition: `all 0.6s ease ${i * 0.15}s`,
+                transform: inView ? "translateY(0)" : "translateY(20px)",
+                transition: "all 0.5s ease-out",
+                transitionDelay: `${i * 0.1}s`,
               }}
             >
               <div className="timeline-line" />
               {/* Dot */}
               <div
                 className="timeline-dot"
-                style={{ background: `linear-gradient(135deg, ${step.color}, ${step.color}aa)` }}
+                style={{ background: step.color, boxShadow: `0 4px 15px ${step.color}44` }}
               >
                 {step.number}
               </div>
@@ -108,45 +109,60 @@ export default function ManufacturingProcess() {
                 style={{
                   flex: 1,
                   background: "white",
-                  borderRadius: "16px",
-                  padding: "clamp(16px, 4vw, 28px)",
-                  boxShadow: "0 4px 20px rgba(0,0,0,0.06)",
+                  borderRadius: "20px",
+                  padding: "24px",
+                  boxShadow: "0 10px 40px rgba(0,0,0,0.04)",
                   border: "1px solid rgba(0,0,0,0.06)",
                   transition: "all 0.3s ease",
+                  position: "relative",
+                  zIndex: 2
                 }}
                 onMouseOver={(e) => {
                   const el = e.currentTarget as HTMLElement;
-                  el.style.transform = "translateX(8px)";
-                  el.style.boxShadow = "0 12px 40px rgba(0,0,0,0.12)";
+                  el.style.transform = "translateY(-5px)";
+                  el.style.boxShadow = "0 20px 50px rgba(0,0,0,0.1)";
                   el.style.borderColor = step.color;
                 }}
                 onMouseOut={(e) => {
                   const el = e.currentTarget as HTMLElement;
-                  el.style.transform = "translateX(0)";
-                  el.style.boxShadow = "0 4px 20px rgba(0,0,0,0.06)";
+                  el.style.transform = "translateY(0)";
+                  el.style.boxShadow = "0 10px 40px rgba(0,0,0,0.04)";
                   el.style.borderColor = "rgba(0,0,0,0.06)";
                 }}
               >
-                <div style={{ display: "flex", alignItems: "flex-start", gap: "10px", marginBottom: "12px", flexWrap: "wrap" }}>
-                  <span style={{ fontSize: "clamp(1.2rem, 4vw, 1.8rem)" }}>{step.icon}</span>
-                  <div style={{ flex: 1, minWidth: "120px" }}>
-                    <h3 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(0.95rem, 3vw, 1.1rem)", color: "var(--primary)", margin: 0 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "16px", flexWrap: "wrap" }}>
+                  <div style={{ 
+                    width: "48px", 
+                    height: "48px", 
+                    borderRadius: "12px", 
+                    background: `${step.color}15`, 
+                    color: step.color,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: "1.4rem"
+                  }}>
+                    {step.icon}
+                  </div>
+                  <div style={{ flex: 1 }}>
+                    <h3 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "1.1rem", color: "var(--primary)", margin: 0 }}>
                       {step.title}
                     </h3>
                   </div>
                   <div style={{
-                    background: `${step.color}18`,
+                    background: `${step.color}10`,
                     color: step.color,
-                    padding: "4px 10px",
+                    padding: "6px 14px",
                     borderRadius: "50px",
-                    fontSize: "0.7rem",
+                    fontSize: "0.75rem",
                     fontWeight: 700,
                     fontFamily: "'Poppins', sans-serif",
+                    border: `1px solid ${step.color}20`
                   }}>
                     Step {step.number}
                   </div>
                 </div>
-                <p style={{ color: "var(--text-secondary)", fontSize: "0.9rem", lineHeight: 1.7, margin: 0 }}>
+                <p style={{ color: "var(--text-secondary)", fontSize: "0.95rem", lineHeight: 1.6, margin: 0 }}>
                   {step.description}
                 </p>
               </div>

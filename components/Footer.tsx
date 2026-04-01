@@ -38,19 +38,19 @@ export default function Footer() {
           <div style={{ display: "flex", flexDirection: "column", gap: "25px" }}>
             <div style={{ 
               background: "white",
-              padding: "15px",
-              borderRadius: "12px",
+              padding: "10px 14px",
+              borderRadius: "10px",
               width: "fit-content",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              boxShadow: "0 10px 30px rgba(0,0,0,0.3)"
+              boxShadow: "0 6px 20px rgba(0,0,0,0.2)"
             }}>
               <Image 
                 src="/main-logo.png" 
                 alt="Shree Ganesh Engimach" 
-                width={280}
-                height={80}
+                width={200}
+                height={56}
                 style={{ objectFit: "contain", display: "block" }} 
                 priority
               />

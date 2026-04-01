@@ -23,7 +23,7 @@ const galleryItems = [
   { src: "/real-ropp-capping.jpeg", alt: "ROPP Capping Machine", label: "Rotary ROPP Capping Machine", category: "Machine" },
   { src: "/real-screw-capping.jpeg", alt: "Screw Capping Machine", label: "Screw Cap Closing Machine", category: "Machine" },
   { src: "/real-machine2.jpeg", alt: "Bottle Rinsing Machine", label: "Rotary Bottle Rinsing Machine", category: "Machine" },
-  { src: "/factory-interior.png", alt: "Manufacturing Facility", label: "Our Manufacturing Facility", category: "Facility" },
+  { src: "/Factory1.jpeg", alt: "Manufacturing Facility", label: "Our Manufacturing Facility", category: "Facility" },
 ];
 
 export default function GallerySection() {

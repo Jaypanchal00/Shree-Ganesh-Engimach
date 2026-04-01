@@ -196,7 +196,7 @@ const localBusinessSchema = {
     longitude: "72.5714",
   },
   hasMap: "https://maps.google.com/?q=Shree+Ganesh+Engimach+Odhav+Ahmedabad",
-  image: [`${BASE_URL}/hero-bg.png`, `${BASE_URL}/factory-interior.png`],
+  image: [`${BASE_URL}/hero-bg.png`, `${BASE_URL}/Factory1.jpeg`],
   logo: `${BASE_URL}/main-logo.png`,
 };
 
