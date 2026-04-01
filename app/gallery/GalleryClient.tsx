@@ -136,7 +136,7 @@ export default function GalleryClient() {
                 <div style={{ 
                   position: "relative", 
                   width: "100%", 
-                  height: "300px", 
+                  height: "clamp(220px, 35vw, 320px)", 
                   overflow: "hidden", 
                   background: "linear-gradient(135deg, #f1f5f9 0%, #ffffff 100%)",
                   display: "flex",

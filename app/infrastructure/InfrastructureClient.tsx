@@ -115,18 +115,18 @@ export default function InfrastructureClient() {
           <div className="precision-grid" style={{ marginBottom: "60px" }}>
             <div className="infra-side-gallery" style={{ position: "relative", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
               <div style={{ display: "grid", gap: "16px" }}>
-                <div style={{ position: "relative", height: "300px", borderRadius: "24px", overflow: "hidden", border: "1px solid var(--border)", background: "white", boxShadow: "0 10px 30px rgba(0,0,0,0.1)", padding: "12px" }}>
+                <div style={{ position: "relative", height: "clamp(180px, 30vw, 300px)", borderRadius: "24px", overflow: "hidden", border: "1px solid var(--border)", background: "white", boxShadow: "0 10px 30px rgba(0,0,0,0.1)", padding: "12px" }}>
                   <Image src={encodeURI("/New 3.jpeg")} alt="Precision Component" fill style={{ objectFit: "contain" }} />
                 </div>
-                <div style={{ position: "relative", height: "200px", borderRadius: "24px", overflow: "hidden", border: "1px solid var(--border)", background: "white", boxShadow: "0 10px 30px rgba(0,0,0,0.1)", padding: "12px" }}>
+                <div style={{ position: "relative", height: "clamp(120px, 20vw, 200px)", borderRadius: "24px", overflow: "hidden", border: "1px solid var(--border)", background: "white", boxShadow: "0 10px 30px rgba(0,0,0,0.1)", padding: "12px" }}>
                   <Image src={encodeURI("/New 5.jpeg")} alt="Machined Part" fill style={{ objectFit: "contain" }} />
                 </div>
               </div>
-              <div style={{ display: "grid", gap: "16px", paddingTop: "40px" }}>
-                <div style={{ position: "relative", height: "200px", borderRadius: "24px", overflow: "hidden", border: "1px solid var(--border)", background: "white", boxShadow: "0 10px 30px rgba(0,0,0,0.1)", padding: "12px" }}>
+              <div style={{ display: "grid", gap: "16px", paddingTop: "clamp(0px, 5vw, 40px)" }}>
+                <div style={{ position: "relative", height: "clamp(120px, 20vw, 200px)", borderRadius: "24px", overflow: "hidden", border: "1px solid var(--border)", background: "white", boxShadow: "0 10px 30px rgba(0,0,0,0.1)", padding: "12px" }}>
                   <Image src={encodeURI("/New 7.jpeg")} alt="High Quality Spares" fill style={{ objectFit: "contain" }} />
                 </div>
-                <div style={{ position: "relative", height: "300px", borderRadius: "24px", overflow: "hidden", border: "1px solid var(--border)", background: "white", boxShadow: "0 10px 30px rgba(0,0,0,0.1)", padding: "12px" }}>
+                <div style={{ position: "relative", height: "clamp(180px, 30vw, 300px)", borderRadius: "24px", overflow: "hidden", border: "1px solid var(--border)", background: "white", boxShadow: "0 10px 30px rgba(0,0,0,0.1)", padding: "12px" }}>
                   <Image src={encodeURI("/New 4.jpeg")} alt="Technical Spare" fill style={{ objectFit: "contain" }} />
                 </div>
               </div>
