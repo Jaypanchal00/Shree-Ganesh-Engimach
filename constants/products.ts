@@ -319,112 +319,36 @@ export const products: Product[] = [
     ]
   },
   {
-    id: "spare-1",
-    category: "spare-parts",
-    name: "ROPP Capping Head Assembly",
-    image: "/real-capping-head.jpeg",
-    description: "Heavy-duty ROPP capping head assembly with threading rollers and pilfer-proof rollers. Precision-machined for consistent aluminium cap application on rotary capping machines.",
-    longDescription: "The ROPP Capping Head Assembly is the core mechanical component of any ROPP rotary capping machine. It consists of top-pressure spring assembly, threading rollers (for forming threads on the aluminium cap), and pilfer-proof banding rollers (for forming the security band). All components are precision-machined from high-grade tool steel and hardened for long service life. Available in various configurations to match different ROPP cap diameters (18mm to 38mm). Compatible with all standard rotary ROPP capping machines including Indian and imported brands. These spare assemblies are essential for maintaining consistent capping quality and production uptime.",
-    specs: {
-      "Compatible Cap Sizes": "18 mm, 22 mm, 25 mm, 28 mm, 32 mm, 38 mm",
-      "Material": "Tool Steel (Hardened & Ground)",
-      "Threading Rollers": "Included",
-      "Pilfer-Proof Rollers": "Included",
-      "Spring Assembly": "Adjustable pressure spring",
-      "Compatibility": "All standard ROPP capping machines",
-      "Surface Finish": "Hard Chrome / Ground",
-      "Availability": "Ready stock / Custom order",
-      "Warranty": "6 months against manufacturing defect",
-      "Supply": "Single head or complete set"
-    },
-    industries: ["Liquor & Spirits", "Pharmaceuticals", "Beverages", "Mineral Water"],
-    badge: "Genuine Part",
-    badgeColor: "#b45309",
-    features: [
-      "Precision-machined tool steel construction",
-      "Hardened threading and pilfer-proof rollers",
-      "Adjustable spring pressure for consistent torque",
-      "Compatible with all standard ROPP capping machines",
-      "Mirror-finish surface for hygienic operation",
-      "Ready stock available for fast dispatch",
-      "Custom sizes manufactured on order"
-    ]
-  },
-  {
     id: "spare-2",
     category: "spare-parts",
-    name: "Star Wheel & Neck Guide Set",
+    name: "Precision Star Wheel Set",
     image: "/real-star-plate.jpeg",
-    description: "Precision star wheel and neck guide set for bottle conveying and spacing in filling, capping, and labeling machines. Available in SS 304, Nylon, and Delrin for all bottle sizes.",
-    longDescription: "Star Wheels are critical timing and spacing components in rotary filling, capping, rinsing, and labeling machines. They grip the bottle by the neck or body and transfer it precisely between machine stations while maintaining equal spacing at high speed. Our star wheels are CNC-machined in SS 304, food-grade Nylon, or engineering-grade Delrin (POM) depending on the application. Matching neck guides, base plates, and worm screw spacers are also available as complete format sets. Custom star wheels are manufactured as per bottle drawing or sample within short lead times. A worn or incorrect star wheel directly causes bottle jams, misalignment, and production downtime.",
-    specs: {
-      "Available Materials": "SS 304 / Nylon / Delrin (POM) / UHMWPE",
-      "Bottle Neck Dia. Range": "12 mm – 120 mm (custom)",
-      "Pocket Shapes": "Round / Oval / Square / Custom",
-      "Seat Configuration": "2, 4, 6, 8, 10, 12, 16, 20 pocket",
-      "Machining": "CNC precision machined",
-      "Matching Guide Rails": "Available",
-      "Lead Time": "3–7 working days (custom)",
-      "Compatibility": "All rotary filling / capping / rinsing lines",
-      "Supplied As": "Single star / Complete format set",
-      "Sample Required": "Bottle sample or technical drawing"
-    },
-    industries: ["All Packaging Industries"],
+    description: "Custom-profile Star Wheels for stable bottle handling.",
+    specs: { "Material": "Nylon / SS 304", "Customizable": "Yes" },
+    industries: ["Beverage", "Pharma"],
     badge: "CNC Precision",
-    badgeColor: "#475569",
-    features: [
-      "CNC precision machined for exact bottle fit",
-      "Available in SS 304, Nylon, Delrin, and UHMWPE",
-      "Custom designs manufactured from bottle sample or drawing",
-      "Complete format sets (star + guide + base plate)",
-      "Reduces bottle jam and misalignment on production lines",
-      "Short lead time: 3–7 working days for custom orders",
-      "Compatible with all rotary filling and capping machines",
-      "Ready stock for common bottle sizes"
-    ]
+    badgeColor: "#475569"
   },
   {
     id: "spare-3",
     category: "spare-parts",
-    name: "High-Precision ROPP Capping Head",
+    name: "Hardened ROPP Capping Head",
     image: "/New 1jpeg.jpeg",
-    description: "Superior Ra value ROPP capping head for food-grade and pharma applications. Features hardened rollers and adjustable torque spring.",
-    specs: { "Material": "Hardened Tool Steel", "Compatibility": "22mm - 38mm Caps", "Finish": "Mirror Polished" },
-    industries: ["Pharma", "Food", "Beverage"],
-    badge: "New Arrival",
+    description: "Superior Ra value ROPP capping head.",
+    specs: { "Material": "Hardened Tool Steel", "Compatibility": "22-38mm" },
+    industries: ["Liquor", "Food"],
+    badge: "Bestseller",
     badgeColor: "var(--secondary)"
   },
   {
     id: "spare-4",
     category: "spare-parts",
-    name: "Capping Head Multi-Assembly",
+    name: "Integrated Spindle Unit",
     image: "/New2.jpeg",
-    description: "Twin assembly set of high-performance capping heads. Precision machined for 100% standard fitment and long-term durability.",
-    specs: { "Type": "Rotary / Inline", "Material": "Stainless Steel + Tool Steel", "Adjustment": "Threaded" },
-    industries: ["Liquor", "Beverage"],
-    badge: "Premium Quality",
-    badgeColor: "var(--primary)"
-  },
-  {
-    id: "spare-5",
-    category: "spare-parts",
-    name: "Precision Shop Assembly Unit",
-    image: "/New 3.jpeg",
-    description: "Complete assembly unit for high-speed rotary machines. Engineered for perfect alignment and zero-vibration performance.",
-    specs: { "Type": "Main Assembly", "Accuracy": "±0.05 mm", "Application": "Rotary Machines" },
-    industries: ["Packaging", "Heavy Industry"],
-    badge: "Technical Spare",
-    badgeColor: "#475569"
-  },
-  {
-    id: "spare-8",
-    category: "spare-parts",
-    name: "Main Spindle Assembly Part",
-    image: "/New 6.jpeg",
-    description: "Critical spindle component for high-torque capping operations. Built for zero-vibration performance at high BPH.",
-    specs: { "Grade": "AISI 304 / 316", "Assembly": "Integrated Bearings", "Load": "High Axial Load" },
-    industries: ["Chemicals", "Oils"],
-    badge: "OEM Standard",
+    description: "Integrated spindle and head assembly.",
+    specs: { "Material": "AISI 304", "Torque": "Adjustable" },
+    industries: ["Oils", "Chemicals"],
+    badge: "Durable",
     badgeColor: "#7c3aed"
-  },
+  }
 ];

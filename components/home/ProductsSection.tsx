@@ -244,13 +244,11 @@ export default function ProductsSection() {
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
               {[
-                { src: "/New 1jpeg.jpeg", title: "Capping Head" },
-                { src: "/New2.jpeg", title: "Machined Components" },
-                { src: "/New 3.jpeg", title: "Shop Assembly" },
-                { src: "/New 6.jpeg", title: "Spindle Units" },
+                { src: encodeURI("/New 8.jpeg"), title: "Quality Manufacturing", fit: "contain" },
+                { src: encodeURI("/Factory5.jpeg"), title: "Quality Lab", fit: "cover" },
               ].map((img, idx) => (
-                <div key={idx} style={{ position: "relative", height: "180px", borderRadius: "16px", overflow: "hidden", border: "1px solid var(--border)", boxShadow: "0 10px 25px rgba(0,0,0,0.05)" }}>
-                  <Image src={img.src} alt={img.title} fill style={{ objectFit: "cover" }} />
+                <div key={idx} style={{ position: "relative", height: "180px", borderRadius: "16px", overflow: "hidden", background: "white", border: "1px solid var(--border)", boxShadow: "0 10px 25px rgba(0,0,0,0.05)" }}>
+                  <Image src={img.src} alt={img.title} fill style={{ objectFit: img.fit as any, padding: img.fit === "contain" ? "10px" : "0" }} />
                   <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "10px", background: "rgba(15,23,42,0.7)", backdropFilter: "blur(4px)", color: "white", fontSize: "0.75rem", fontWeight: 700, textAlign: "center" }}>
                     {img.title}
                   </div>

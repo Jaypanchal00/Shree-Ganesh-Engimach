@@ -7,25 +7,29 @@ import { FiX, FiArrowLeft, FiArrowRight, FiGrid, FiList } from "react-icons/fi";
 const categories = ["All", "Factory Photos", "Machinery", "Spare Parts"];
 
 const galleryData = [
-  { src: "/Factory1.jpeg", alt: "Main Production Floor", category: "Factory Photos", title: "Main Manufacturing Unit" },
-  { src: "/Factory2.jpeg", alt: "Production Line Area", category: "Factory Photos", title: "Industrial Production Area" },
-  { src: "/Factory3.jpeg", alt: "Machining Workstation", category: "Factory Photos", title: "Heavy Duty Machining Unit" },
-  { src: "/Factory4.jpeg", alt: "Fabrication Unit", category: "Factory Photos", title: "Fabrication & Welding Setup" },
-  { src: "/Factory5.jpeg", alt: "Quality Control Lab", category: "Factory Photos", title: "Final Quality Check Zone" },
-  { src: "/real-filling-machine.jpeg", alt: "Automatic Liquid Filling Machine", category: "Machinery", title: "Automatic Liquid Filling Machine" },
-  { src: "/real-capping-machine.jpeg", alt: "Inline Capping Machine", category: "Machinery", title: "Automatic Inline Capping Machine" },
-  { src: "/real-ropp-capping.jpeg", alt: "ROPP Capping Machine", category: "Machinery", title: "Rotary ROPP Capping Machine" },
-  { src: "/real-screw-capping.jpeg", alt: "Screw Capping Machine", category: "Machinery", title: "Screw Cap Closing Machine" },
-  { src: "/real-machine1.jpeg", alt: "Volumetric Filling Machine", category: "Machinery", title: "Volumetric Piston Filling Machine" },
-  { src: "/real-machine2.jpeg", alt: "Bottle Rinsing Machine", category: "Machinery", title: "Rotary Bottle Rinsing Machine" },
-  { src: "/New 1jpeg.jpeg", alt: "ROPP Capping Head", category: "Spare Parts", title: "High-Precision Capping Head" },
-  { src: "/New2.jpeg", alt: "Machine Component", category: "Spare Parts", title: "Precision Machined Component" },
-  { src: "/New 3.jpeg", alt: "Capping Head Shop Assembly", category: "Spare Parts", title: "Technical Assembly Unit" },
-  { src: "/New 6.jpeg", alt: "Capping Assembly", category: "Spare Parts", title: "ROPP Head Spare Assembly" },
-  { src: "/real-star-plate.jpeg", alt: "Star Wheel", category: "Spare Parts", title: "Star Wheel & Neck Guide" },
-  { src: "/real-capping-assembly.jpeg", alt: "Capping Assembly", category: "Spare Parts", title: "Capping Head Assembly" },
-  { src: "/real-giva-assembly.jpeg", alt: "Machine Assembly", category: "Machinery", title: "Assembly & Fabrication Unit" },
-  { src: "/real-assembly.jpeg", alt: "Parts Assembly", category: "Machinery", title: "Precision Parts Assembly" },
+  { id: 1, src: "/Factory1.jpeg", alt: "Main Production Floor", category: "Factory Photos", title: "Main Manufacturing Unit" },
+  { id: 2, src: "/Factory2.jpeg", alt: "Production Line Area", category: "Factory Photos", title: "Industrial Production Area" },
+  { id: 3, src: "/Factory3.jpeg", alt: "Machining Workstation", category: "Factory Photos", title: "Heavy Duty Machining Unit" },
+  { id: 4, src: "/Factory4.jpeg", alt: "Fabrication Unit", category: "Factory Photos", title: "Fabrication & Welding Setup" },
+  { id: 5, src: "/Factory5.jpeg", alt: "Quality Control Lab", category: "Factory Photos", title: "Final Quality Check Zone" },
+  { id: 6, src: "/real-filling-machine.jpeg", alt: "Automatic Liquid Filling Machine", category: "Machinery", title: "Automatic Liquid Filling Machine" },
+  { id: 7, src: "/real-capping-machine.jpeg", alt: "Inline Capping Machine", category: "Machinery", title: "Automatic Inline Capping Machine" },
+  { id: 8, src: "/real-ropp-capping.jpeg", alt: "ROPP Capping Machine", category: "Machinery", title: "Rotary ROPP Capping Machine" },
+  { id: 9, src: "/real-screw-capping.jpeg", alt: "Screw Capping Machine", category: "Machinery", title: "Screw Cap Closing Machine" },
+  { id: 10, src: "/real-machine1.jpeg", alt: "Volumetric Filling Machine", category: "Machinery", title: "Volumetric Piston Filling Machine" },
+  { id: 11, src: "/real-machine2.jpeg", alt: "Bottle Rinsing Machine", category: "Machinery", title: "Rotary Bottle Rinsing Machine" },
+  { id: 12, src: "/New 1jpeg.jpeg", alt: "ROPP Capping Head", category: "Spare Parts", title: "High-Precision Capping Head" },
+  { id: 13, src: "/New2.jpeg", alt: "Machine Component", category: "Spare Parts", title: "Precision Machined Component" },
+  { id: 14, src: "/New 3.jpeg", alt: "Shop Environment", category: "Factory Photos", title: "In-House Assembly Line" },
+  { id: 15, src: "/New 4.jpeg", alt: "Engineering Unit", category: "Factory Photos", title: "Precision Engineering Shop" },
+  { id: 16, src: "/New 5.jpeg", alt: "Tool Setup", category: "Spare Parts", title: "Machined Part Setup" },
+  { id: 17, src: "/New 6.jpeg", alt: "Spindle Assembly", category: "Spare Parts", title: "Main Spindle Component" },
+  { id: 18, src: "/New 7.jpeg", alt: "Machined Gear", category: "Spare Parts", title: "Custom Machined Gear" },
+  { id: 19, src: "/New 8.jpeg", alt: "Technical Assembly", category: "Spare Parts", title: "Advanced Spare Assembly" },
+  { id: 20, src: "/real-star-plate.jpeg", alt: "Star Wheel", category: "Spare Parts", title: "Star Wheel & Neck Guide" },
+  { id: 21, src: "/real-capping-assembly.jpeg", alt: "Capping Assembly", category: "Spare Parts", title: "Capping Head Assembly" },
+  { id: 22, src: "/real-giva-assembly.jpeg", alt: "Machine Assembly", category: "Machinery", title: "Assembly & Fabrication Unit" },
+  { id: 23, src: "/real-assembly.jpeg", alt: "Parts Assembly", category: "Machinery", title: "Precision Parts Assembly" },
 ];
 
 export default function GalleryClient() {
@@ -33,6 +37,10 @@ export default function GalleryClient() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   const filtered = galleryData.filter((item) => activeCategory === "All" || item.category === activeCategory);
+
+  useEffect(() => {
+    setLightboxIndex(null);
+  }, [activeCategory]);
 
   const closeLightbox = () => setLightboxIndex(null);
   const prev = useCallback(() => setLightboxIndex((i) => (i === null || i === 0 ? filtered.length - 1 : i - 1)), [filtered.length]);
@@ -99,7 +107,7 @@ export default function GalleryClient() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: "24px" }}>
             {filtered.map((item, i) => (
               <div
-                key={i}
+                key={item.id}
                 className="gallery-item-card"
                 onClick={() => setLightboxIndex(i)}
                 style={{
@@ -125,13 +133,27 @@ export default function GalleryClient() {
                   el.style.borderColor = "var(--border)";
                 }}
               >
-                <div style={{ position: "relative", width: "100%", height: "250px", overflow: "hidden" }}>
+                <div style={{ 
+                  position: "relative", 
+                  width: "100%", 
+                  height: "300px", 
+                  overflow: "hidden", 
+                  background: item.category !== "Factory Photos" ? "linear-gradient(135deg, #f1f5f9 0%, #ffffff 100%)" : "white",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: item.category !== "Factory Photos" ? "20px" : "0"
+                }}>
                   <Image 
-                    src={item.src} 
+                    src={encodeURI(item.src)} 
                     alt={item.alt} 
                     fill 
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
-                    style={{ objectFit: "cover", transition: "transform 0.6s ease" }} 
+                    style={{ 
+                      objectFit: item.category !== "Factory Photos" ? "contain" : "cover", 
+                      transition: "transform 0.6s ease",
+                      filter: item.category !== "Factory Photos" ? "drop-shadow(0 10px 25px rgba(15,61,94,0.12))" : "none"
+                    }} 
                     loading="lazy" 
                   />
                   <div className="card-overlay" style={{
@@ -156,7 +178,7 @@ export default function GalleryClient() {
           <div style={{ position: "relative", maxWidth: "90vw", width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }} onClick={(e) => e.stopPropagation()}>
             <div style={{ position: "relative", width: "100%", display: "flex", justifyContent: "center" }}>
               <Image 
-                src={filtered[lightboxIndex].src} 
+                src={encodeURI(filtered[lightboxIndex].src)} 
                 alt={filtered[lightboxIndex].alt} 
                 width={1200} 
                 height={800} 
