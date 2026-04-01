@@ -1,31 +1,15 @@
-import { MetadataRoute } from 'next';
+import { MetadataRoute } from "next";
+
+const BASE_URL = "https://shreeganeshengimach.com";
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: [
-      {
-        userAgent: '*',
-        allow: '/',
-        disallow: [
-          '/admin/',
-          '/api/',
-          '/_next/',
-          '/static/',
-          '/*.json$',
-        ],
-      },
-      {
-        userAgent: 'Googlebot',
-        allow: '/',
-        disallow: ['/api/', '/admin/'],
-      },
-      {
-        userAgent: 'Bingbot',
-        allow: '/',
-        disallow: ['/api/', '/admin/'],
-      },
-    ],
-    sitemap: 'https://shreeganeshengimach.com/sitemap.xml',
-    host: 'https://shreeganeshengimach.com',
+    rules: {
+      userAgent: "*",
+      allow: "/",
+      disallow: ["/_next/", "/api/", "/public/"],
+    },
+    sitemap: `${BASE_URL}/sitemap.xml`,
+    host: BASE_URL,
   };
 }

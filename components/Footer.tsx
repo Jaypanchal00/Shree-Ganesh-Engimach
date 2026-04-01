@@ -218,12 +218,24 @@ export default function Footer() {
 
       <div style={{ background: "rgba(0,0,0,0.3)", padding: "20px 0", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
         <div className="container-custom" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "15px" }}>
-          <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.85rem", margin: 0 }}>
-            © {new Date().getFullYear()} Shree Ganesh Engimach. All rights reserved.
-          </p>
+          <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+            <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "0.85rem", margin: 0 }}>
+              © {new Date().getFullYear()} Shree Ganesh Engimach. All rights reserved.
+            </p>
+            <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.8rem", margin: 0, fontWeight: 600 }}>
+              GSTIN: 24FGYPP3784D1Z0
+            </p>
+          </div>
           <div style={{ display: "flex", gap: "20px" }}>
-            {["Privacy Policy", "Terms", "Sitemap"].map((item) => (
-              <a key={item} href="#" style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.85rem", textDecoration: "none" }}>{item}</a>
+            {[
+              { label: "Privacy Policy", href: "/privacy-policy" },
+              { label: "Terms", href: "/terms" },
+              { label: "Sitemap", href: "/sitemap-html" }
+            ].map((item) => (
+              <Link key={item.label} href={item.href} style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.85rem", textDecoration: "none", transition: "0.3s" }}
+                 onMouseOver={(e) => (e.currentTarget as HTMLElement).style.color = "white"}
+                 onMouseOut={(e) => (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.6)"}
+              >{item.label}</Link>
             ))}
           </div>
         </div>

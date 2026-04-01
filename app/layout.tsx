@@ -117,6 +117,7 @@ const organizationSchema = {
   alternateName: "SGE Packaging Machines",
   description:
     "Manufacturer of bottle filling, capping, washing, labeling machines and spare parts in Ahmedabad, India.",
+  vatID: "24FGYPP3784D1Z0",
   url: BASE_URL,
   logo: {
     "@type": "ImageObject",
