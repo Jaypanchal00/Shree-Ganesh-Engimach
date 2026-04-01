@@ -41,128 +41,167 @@ export default function ProductsSection() {
         </div>
 
         {/* Product Grid */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "28px" }}>
+        <div style={{ 
+          display: "grid", 
+          gridTemplateColumns: "repeat(auto-fill, minmax(360px, 1fr))", 
+          gap: "40px" 
+        }}>
           {featuredProducts.map((product, i) => (
             <div
               key={product.id}
               className="product-card"
               style={{
                 opacity: inView ? 1 : 0,
-                transform: inView ? "translateY(0)" : "translateY(30px)",
-                transition: `all 0.5s ease ${i * 0.1}s`,
+                transform: inView ? "translateY(0)" : "translateY(50px)",
+                transition: `all 0.8s cubic-bezier(0.2, 1, 0.3, 1) ${i * 0.15}s`,
                 display: "flex",
                 flexDirection: "column",
                 height: "100%",
-                background: "#ffffff",
+                background: "white",
+                borderRadius: "32px",
+                overflow: "hidden",
+                border: "1px solid rgba(15,61,94,0.06)",
+                boxShadow: "0 25px 80px rgba(15,61,94,0.08)",
+                position: "relative"
               }}
             >
-              {/* Image */}
-              <div className="card-image-wrap">
-                <Image src={product.image} alt={product.name} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" style={{ objectFit: "contain", padding: "16px", mixBlendMode: "multiply", backgroundColor: "white" }} />
-                <div className="card-overlay">
-                  <Link
-                    href={`/products/${product.id}`}
-                    style={{
-                      background: "white",
-                      color: "var(--primary)",
-                      padding: "10px 24px",
-                      borderRadius: "50px",
-                      fontFamily: "'Poppins', sans-serif",
-                      fontWeight: 600,
-                      fontSize: "0.875rem",
-                      textDecoration: "none",
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "6px",
-                    }}
-                  >
-                    View Details <FiArrowRight size={14} />
-                  </Link>
-                </div>
-                {product.badge && (
-                  <div style={{
-                    position: "absolute", top: "14px", left: "14px",
-                    background: product.badgeColor,
-                    color: "white",
-                    padding: "4px 12px",
-                    borderRadius: "50px",
-                    fontSize: "0.72rem",
-                    fontWeight: 700,
-                    fontFamily: "'Poppins', sans-serif",
-                    letterSpacing: "0.5px",
-                  }}>
-                    {product.badge}
+              {/* Image Section - Framed Look */}
+              <div style={{ padding: "16px" }}>
+                <div style={{
+                  position: "relative",
+                  height: "300px",
+                  background: "linear-gradient(135deg, #f8faff 0%, #ffffff 100%)",
+                  borderRadius: "20px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: "24px",
+                  overflow: "hidden",
+                  border: "1px solid rgba(15,61,94,0.1)",
+                  boxShadow: "inset 0 0 40px rgba(15,61,94,0.03)"
+                }}>
+                  <div style={{ 
+                    position: "relative", 
+                    width: "100%", 
+                    height: "100%", 
+                    transition: "all 0.6s cubic-bezier(0.2, 1, 0.3, 1)" 
+                  }} className="product-image-container">
+                    <Image 
+                      src={product.image} 
+                      alt={product.name} 
+                      fill 
+                      sizes="(max-width: 768px) 100vw, 33vw" 
+                      style={{ objectFit: "contain", filter: "drop-shadow(0 15px 35px rgba(0,0,0,0.12))" }} 
+                    />
                   </div>
-                )}
+                  
+                  {/* Badge */}
+                  {product.badge && (
+                    <div style={{
+                      position: "absolute", top: "16px", right: "16px",
+                      background: i % 2 === 0 ? "var(--secondary)" : "#0f172a",
+                      color: "white",
+                      padding: "6px 14px",
+                      borderRadius: "10px",
+                      fontSize: "0.7rem",
+                      fontWeight: 800,
+                      fontFamily: "'Poppins', sans-serif",
+                      boxShadow: "0 4px 15px rgba(0,0,0,0.1)",
+                      zIndex: 2,
+                      textTransform: "uppercase",
+                      letterSpacing: "0.5px"
+                    }}>
+                      {product.badge}
+                    </div>
+                  )}
+                  
+                  {/* Hover Overlay */}
+                  <div style={{
+                    position: "absolute", inset: 0,
+                    background: "rgba(15,23,42,0.6)",
+                    backdropFilter: "blur(6px)",
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    opacity: 0, transition: "all 0.4s ease",
+                    zIndex: 3
+                  }} className="card-overlay-btn">
+                    <Link href={`/products/${product.id}`} className="btn-primary" style={{ padding: "12px 24px", fontSize: "0.95rem" }}>
+                      See Full Specs <FiArrowRight size={18} />
+                    </Link>
+                  </div>
+                </div>
               </div>
 
-              {/* Content */}
-              <div style={{ padding: "24px", display: "flex", flexDirection: "column", flex: 1 }}>
-                <div style={{
-                  display: "inline-block",
-                  background: "rgba(15,61,94,0.08)",
-                  color: "var(--primary)",
-                  padding: "4px 12px",
-                  borderRadius: "50px",
-                  fontSize: "0.75rem",
-                  fontWeight: 600,
-                  fontFamily: "'Poppins', sans-serif",
-                  letterSpacing: "0.5px",
-                  textTransform: "uppercase",
-                  marginBottom: "12px",
-                  alignSelf: "flex-start",
-                }}>
-                  {product.category}
+              {/* Content Section */}
+              <div style={{ padding: "0 40px 40px", display: "flex", flexDirection: "column", flex: 1, gap: "20px" }}>
+                <div>
+                  <div style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "8px",
+                    color: "var(--secondary)",
+                    fontSize: "0.85rem",
+                    fontWeight: 800,
+                    textTransform: "uppercase",
+                    letterSpacing: "1.5px",
+                    marginBottom: "16px",
+                    fontFamily: "'Poppins', sans-serif"
+                  }}>
+                    <span style={{ width: "20px", height: "2px", background: "currentColor" }} />
+                    {product.category}
+                  </div>
+                  <h3 style={{
+                    fontFamily: "'Poppins', sans-serif",
+                    fontWeight: 900,
+                    fontSize: "1.5rem",
+                    color: "var(--primary)",
+                    lineHeight: "1.25",
+                    margin: 0,
+                    height: "3.75rem",
+                    overflow: "hidden",
+                    display: "-webkit-box",
+                    WebkitLineClamp: 2,
+                    WebkitBoxOrient: "vertical"
+                  }}>
+                    {product.name}
+                  </h3>
                 </div>
-                <h3 style={{
-                  fontFamily: "'Poppins', sans-serif",
-                  fontWeight: 700,
-                  fontSize: "1.2rem",
-                  color: "var(--primary)",
-                  marginBottom: "8px",
-                  display: "-webkit-box",
-                  WebkitLineClamp: 2,
-                  WebkitBoxOrient: "vertical",
-                  overflow: "hidden",
-                  minHeight: "2.8rem",
-                  lineHeight: "1.4"
-                }}>
-                  {product.name}
-                </h3>
+
                 <p style={{
                   color: "var(--text-secondary)",
-                  fontSize: "0.875rem",
-                  lineHeight: 1.6,
-                  marginBottom: "20px",
+                  fontSize: "0.95rem",
+                  lineHeight: 1.7,
+                  margin: 0,
                   display: "-webkit-box",
-                  WebkitLineClamp: 4,
+                  WebkitLineClamp: 3,
                   WebkitBoxOrient: "vertical",
                   overflow: "hidden",
-                  flex: 1
+                  flex: 1,
+                  opacity: 0.85
                 }}>
                   {product.description}
                 </p>
 
-                {/* Specs */}
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "24px" }}>
+                {/* Specs Pill */}
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
                   {Object.entries(product.specs).slice(0, 3).map(([key, val], j) => (
-                    <span key={j} style={{
-                      background: "var(--bg-secondary)",
-                      color: "var(--text-secondary)",
-                      padding: "6px 12px",
-                      borderRadius: "6px",
-                      fontSize: "0.75rem",
+                    <div key={j} style={{
+                      background: "rgba(37,99,235,0.06)",
+                      color: "var(--secondary)",
+                      padding: "8px 14px",
+                      borderRadius: "10px",
+                      fontSize: "0.8rem",
+                      fontWeight: 700,
                       fontFamily: "'Inter', sans-serif",
-                      border: "1px solid var(--border)",
+                      border: "1px solid rgba(37,99,235,0.1)"
                     }}>
                       {val}
-                    </span>
+                    </div>
                   ))}
                 </div>
 
-                <div style={{ display: "flex", gap: "12px", marginTop: "auto" }}>
-                  <Link href={`/products/${product.id}`} className="btn-blue" style={{ flex: 1, justifyContent: "center", padding: "12px 20px" }}>
-                    View Details
+                <div style={{ display: "flex", gap: "16px", marginTop: "16px" }}>
+                  <Link href={`/products/${product.id}`} className="btn-blue" style={{ flex: 2, justifyContent: "center", height: "54px", borderRadius: "14px", fontSize: "0.95rem", fontWeight: 700 }}>
+                    Details
                   </Link>
                   <a
                     href={`https://wa.me/919725397262?text=Hello%2C%20I%20am%20interested%20in%20${encodeURIComponent(product.name)}.`}
@@ -173,14 +212,14 @@ export default function ProductsSection() {
                       display: "flex", alignItems: "center", justifyContent: "center",
                       background: "#25D366",
                       color: "white",
-                      width: "48px", borderRadius: "10px",
+                      width: "54px", borderRadius: "14px",
                       textDecoration: "none",
-                      fontSize: "1.2rem",
+                      fontSize: "1.6rem",
                       flexShrink: 0,
-                      transition: "all 0.3s ease",
+                      boxShadow: "0 10px 25px rgba(37,211,102,0.3)"
                     }}
                   >
-                    <FaWhatsapp size={22} />
+                    <FaWhatsapp />
                   </a>
                 </div>
               </div>
@@ -196,6 +235,17 @@ export default function ProductsSection() {
           </Link>
         </div>
       </div>
+      <style jsx>{`
+        .product-card:hover .product-image-container {
+          transform: scale(1.1);
+        }
+        .product-card:hover .card-overlay-btn {
+          opacity: 1 !important;
+        }
+        .product-card:hover .card-overlay-btn :global(.btn-primary) {
+          transform: translateY(0) !important;
+        }
+      `}</style>
     </section>
   );
 }
