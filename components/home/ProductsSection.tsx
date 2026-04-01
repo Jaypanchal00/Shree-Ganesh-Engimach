@@ -227,11 +227,44 @@ export default function ProductsSection() {
           ))}
         </div>
 
+        {/* Precision Spares Highlight */}
+        <div style={{ marginTop: "100px", padding: "60px", background: "white", borderRadius: "40px", border: "1px solid rgba(15,61,94,0.06)", boxShadow: "0 40px 100px rgba(15,61,94,0.05)" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1.2fr 2fr", gap: "60px", alignItems: "center" }}>
+            <div>
+              <span className="section-badge" style={{ background: "rgba(15,61,94,0.05)", color: "var(--primary)" }}>Engineering Spares</span>
+              <h3 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 900, fontSize: "2rem", color: "var(--primary)", marginTop: "16px", marginBottom: "20px" }}>
+                High-Precision <span style={{ color: "var(--secondary)" }}>Components</span>
+              </h3>
+              <p style={{ color: "var(--text-secondary)", lineHeight: 1.8, marginBottom: "30px", fontSize: "1.05rem" }}>
+                We don&apos;t just build machines; we engineer the precision components that power them. Our range of ROPP capping heads and machinery spares are built to OEM standards for maximum reliability.
+              </p>
+              <Link href="/products?category=spare-parts" className="btn-blue" style={{ display: "inline-flex", gap: "10px", padding: "14px 28px" }}>
+                Browse All Spares <FiArrowRight size={18} />
+              </Link>
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
+              {[
+                { src: "/New 1jpeg.jpeg", title: "Capping Head" },
+                { src: "/New2.jpeg", title: "Machined Components" },
+                { src: "/New 3.jpeg", title: "Shop Assembly" },
+                { src: "/New 6.jpeg", title: "Spindle Units" },
+              ].map((img, idx) => (
+                <div key={idx} style={{ position: "relative", height: "180px", borderRadius: "16px", overflow: "hidden", border: "1px solid var(--border)", boxShadow: "0 10px 25px rgba(0,0,0,0.05)" }}>
+                  <Image src={img.src} alt={img.title} fill style={{ objectFit: "cover" }} />
+                  <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "10px", background: "rgba(15,23,42,0.7)", backdropFilter: "blur(4px)", color: "white", fontSize: "0.75rem", fontWeight: 700, textAlign: "center" }}>
+                    {img.title}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         {/* View All */}
-        <div style={{ textAlign: "center", marginTop: "48px" }}>
-          <Link href="/products" className="btn-primary" style={{ fontSize: "1rem" }}>
-            View All Products
-            <FiArrowRight size={18} />
+        <div style={{ textAlign: "center", marginTop: "60px" }}>
+          <Link href="/products" className="btn-primary" style={{ fontSize: "1.1rem", padding: "16px 40px" }}>
+            Explore Full Catalog
+            <FiArrowRight size={20} />
           </Link>
         </div>
       </div>

@@ -71,7 +71,7 @@ export default function AboutClient() {
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px" }}>
               <div style={{ display: "grid", gap: "10px" }}>
                 <Image src="/Factory1.jpeg" alt="Factory Floor" width={300} height={400} style={{ width: "100%", height: "320px", objectFit: "cover", borderRadius: "24px", boxShadow: "0 10px 40px rgba(0,0,0,0.1)" }} />
-                <Image src="/Factory3.jpeg" alt="Assembly Unit" width={300} height={200} style={{ width: "100%", height: "180px", objectFit: "cover", borderRadius: "24px", boxShadow: "0 10px 40px rgba(0,0,0,0.1)" }} />
+                <Image src="/New 5.jpeg" alt="Precision Machining" width={300} height={200} style={{ width: "100%", height: "180px", objectFit: "cover", borderRadius: "24px", boxShadow: "0 10px 40px rgba(0,0,0,0.1)" }} />
               </div>
               <div style={{ display: "grid", gap: "10px", paddingTop: "30px" }}>
                 <Image src="/Factory2.jpeg" alt="Machinery" width={300} height={200} style={{ width: "100%", height: "180px", objectFit: "cover", borderRadius: "24px", boxShadow: "0 10px 40px rgba(0,0,0,0.1)" }} />

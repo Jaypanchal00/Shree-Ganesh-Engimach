@@ -37,7 +37,7 @@ export default function InfrastructureClient() {
       {/* Main Image + Overview */}
       <section className="section-padding" style={{ background: "white" }}>
         <div className="container-custom">
-          <div className="infrastructure-grid-hero" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "60px", alignItems: "center", marginBottom: "80px" }}>
+          <div className="infra-hero-grid" style={{ marginBottom: "80px" }}>
             <div>
               <span className="section-badge"><FaIndustry style={{ marginRight: "6px" }} /> Our Facility</span>
               <h2 className="section-title">World-Class Manufacturing<br /><span style={{ color: "var(--secondary)" }}>Infrastructure</span></h2>
@@ -61,14 +61,14 @@ export default function InfrastructureClient() {
                 ))}
               </div>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px" }}>
+            <div className="factory-image-grid">
               <div style={{ display: "grid", gap: "10px" }}>
-                <Image src="/Factory1.jpeg" alt="Factory Floor" width={300} height={200} style={{ width: "100%", height: "200px", objectFit: "cover", borderRadius: "16px", boxShadow: "0 10px 30px rgba(0,0,0,0.1)" }} />
-                <Image src="/Factory2.jpeg" alt="Assembly Unit" width={300} height={250} style={{ width: "100%", height: "250px", objectFit: "cover", borderRadius: "16px", boxShadow: "0 10px 30px rgba(0,0,0,0.1)" }} />
+                <Image src="/Factory1.jpeg" alt="Factory Floor" width={400} height={300} style={{ width: "100%", height: "200px", objectFit: "cover", borderRadius: "16px", boxShadow: "0 10px 30px rgba(0,0,0,0.1)" }} />
+                <Image src="/Factory2.jpeg" alt="Assembly Unit" width={400} height={300} style={{ width: "100%", height: "250px", objectFit: "cover", borderRadius: "16px", boxShadow: "0 10px 30px rgba(0,0,0,0.1)" }} />
               </div>
               <div style={{ display: "grid", gap: "10px" }}>
-                <Image src="/Factory3.jpeg" alt="Machinery" width={300} height={250} style={{ width: "100%", height: "250px", objectFit: "cover", borderRadius: "16px", boxShadow: "0 10px 30px rgba(0,0,0,0.1)" }} />
-                <Image src="/Factory4.jpeg" alt="Dispatch Area" width={300} height={200} style={{ width: "100%", height: "200px", objectFit: "cover", borderRadius: "16px", boxShadow: "0 10px 30px rgba(0,0,0,0.1)" }} />
+                <Image src="/Factory3.jpeg" alt="Machinery" width={400} height={300} style={{ width: "100%", height: "250px", objectFit: "cover", borderRadius: "16px", boxShadow: "0 10px 30px rgba(0,0,0,0.1)" }} />
+                <Image src="/Factory4.jpeg" alt="Dispatch Area" width={400} height={300} style={{ width: "100%", height: "200px", objectFit: "cover", borderRadius: "16px", boxShadow: "0 10px 30px rgba(0,0,0,0.1)" }} />
               </div>
             </div>
           </div>
@@ -109,33 +109,46 @@ export default function InfrastructureClient() {
         </div>
       </section>
 
-      {/* Machine Details */}
-      <section className="section-padding" style={{ background: "var(--bg-secondary)" }}>
+      {/* Precision Gallery */}
+      <section className="section-padding" style={{ background: "white" }}>
         <div className="container-custom">
-          <div style={{ textAlign: "center", marginBottom: "60px" }}>
-            <span className="section-badge"><FaWrench style={{ marginRight: "6px" }} /> Key Machinery</span>
-            <h2 className="section-title" style={{ textAlign: "center" }}>Our Production Equipment</h2>
-            <div className="red-line-center" />
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "20px" }}>
-            {[
-              { machine: "CNC Vertical Machining Center", qty: "12 units", brand: "BFW / Ace" },
-              { machine: "CNC Lathe Machines", qty: "8 units", brand: "HMT / Ace" },
-              { machine: "TIG Welding Stations", qty: "6 stations", brand: "Miller / Lincoln" },
-              { machine: "Plasma Cutting Machine", qty: "2 units", brand: "Hypertherm" },
-              { machine: "Surface Grinder", qty: "3 units", brand: "Microtek" },
-              { machine: "CMM Machine", qty: "1 unit", brand: "Renishaw" },
-              { machine: "Radial Drill Press", qty: "4 units", brand: "Radicon" },
-              { machine: "Overhead Crane", qty: "2 units", brand: "Elme (5T cap.)" },
-            ].map((m, i) => (
-              <div key={i} style={{ background: "white", borderRadius: "12px", padding: "20px", border: "1px solid var(--border)", boxShadow: "0 4px 16px rgba(0,0,0,0.05)" }}>
-                <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "0.9rem", color: "var(--primary)", marginBottom: "8px" }}>{m.machine}</div>
-                <div style={{ display: "flex", justifyContent: "space-between" }}>
-                  <span style={{ fontSize: "0.8rem", color: "var(--secondary)", fontWeight: 600 }}>{m.qty}</span>
-                  <span style={{ fontSize: "0.8rem", color: "var(--text-muted)" }}>Brand: {m.brand}</span>
+          <div className="precision-grid" style={{ marginBottom: "60px" }}>
+            <div className="infra-side-gallery" style={{ position: "relative", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+              <div style={{ display: "grid", gap: "16px" }}>
+                <div style={{ position: "relative", height: "300px", borderRadius: "24px", overflow: "hidden", border: "1px solid var(--border)", boxShadow: "0 10px 30px rgba(0,0,0,0.1)" }}>
+                  <Image src="/New 1jpeg.jpeg" alt="Precision Component" fill style={{ objectFit: "cover" }} />
+                </div>
+                <div style={{ position: "relative", height: "200px", borderRadius: "24px", overflow: "hidden", border: "1px solid var(--border)", boxShadow: "0 10px 30px rgba(0,0,0,0.1)" }}>
+                  <Image src="/New2.jpeg" alt="Machined Part" fill style={{ objectFit: "cover" }} />
                 </div>
               </div>
-            ))}
+              <div style={{ display: "grid", gap: "16px", paddingTop: "40px" }}>
+                <div style={{ position: "relative", height: "200px", borderRadius: "24px", overflow: "hidden", border: "1px solid var(--border)", boxShadow: "0 10px 30px rgba(0,0,0,0.1)" }}>
+                  <Image src="/New 6.jpeg" alt="High Quality Spares" fill style={{ objectFit: "cover" }} />
+                </div>
+                <div style={{ position: "relative", height: "300px", borderRadius: "24px", overflow: "hidden", border: "1px solid var(--border)", boxShadow: "0 10px 30px rgba(0,0,0,0.1)" }}>
+                  <Image src="/New 4.jpeg" alt="Technical Spare" fill style={{ objectFit: "cover" }} />
+                </div>
+              </div>
+            </div>
+            <div>
+              <span className="section-badge"><FaCogs style={{ marginRight: "6px" }} /> Precision Engineering</span>
+              <h2 className="section-title">Superior Quality<br /><span style={{ color: "var(--secondary)" }}>Spare Parts</span></h2>
+              <div className="red-line" />
+              <p style={{ color: "var(--text-secondary)", lineHeight: 1.8, marginBottom: "24px" }}>
+                Beyond building complete machines, we specialize in manufacturing high-precision spare parts and assemblies. Our CNC machining capabilities allow us to maintain tolerances within microns.
+              </p>
+              <div className="inner-spec-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
+                <div style={{ background: "var(--bg-secondary)", padding: "16px", borderRadius: "12px", borderLeft: "4px solid var(--secondary)" }}>
+                  <div style={{ fontWeight: 700, color: "var(--primary)", fontSize: "0.9rem" }}>Surface Finish</div>
+                  <div style={{ fontSize: "0.8rem", color: "var(--text-secondary)" }}>Superior Ra value for food grade</div>
+                </div>
+                <div style={{ background: "var(--bg-secondary)", padding: "16px", borderRadius: "12px", borderLeft: "4px solid var(--secondary)" }}>
+                  <div style={{ fontWeight: 700, color: "var(--primary)", fontSize: "0.9rem" }}>Interchangeability</div>
+                  <div style={{ fontSize: "0.8rem", color: "var(--text-secondary)" }}>100% standard fitment</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -154,6 +167,87 @@ export default function InfrastructureClient() {
           </Link>
         </div>
       </section>
+
+      <style jsx>{`
+        .infra-hero-grid, .precision-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 60px;
+          align-items: center;
+        }
+        
+        .factory-image-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 10px;
+        }
+
+        @media (max-width: 1024px) {
+          .infra-hero-grid, .precision-grid {
+            grid-template-columns: 1fr !important;
+            gap: 40px !important;
+            text-align: center;
+          }
+          
+          .precision-grid {
+            display: flex !important;
+            flex-direction: column-reverse;
+          }
+
+          .infra-side-gallery {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+          }
+
+          .infra-hero-grid > div:first-child, .precision-grid > div:last-child {
+            order: 2;
+          }
+          
+          .infra-hero-grid > div:last-child, .precision-grid > div:first-child {
+            order: 1;
+          }
+
+          .infra-hero-grid .red-line {
+            margin: 16px auto 24px !important;
+          }
+
+          .infra-hero-grid div[style*="flexDirection: column"] {
+            align-items: center;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .factory-image-grid, .inner-spec-grid, .infra-side-gallery {
+            grid-template-columns: 1fr !important;
+          }
+          
+          .infra-side-gallery > div {
+            padding-top: 0 !important;
+            gap: 16px !important;
+          }
+
+          .infra-side-gallery div[style*="height"] {
+            height: 250px !important;
+          }
+
+          .factory-image-grid div[style*="height"] {
+            height: 200px !important;
+          }
+          
+          .section-padding {
+            padding: 60px 0 !important;
+          }
+
+          h1 {
+            font-size: 2.2rem !important;
+          }
+
+          h2 {
+            font-size: 1.8rem !important;
+          }
+        }
+      `}</style>
     </>
   );
 }

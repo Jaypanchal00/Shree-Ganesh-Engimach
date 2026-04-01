@@ -342,11 +342,10 @@ export const products: Product[] = [
     badgeColor: "#b45309",
     features: [
       "Precision-machined tool steel construction",
-      "Hardened rollers for extended service life",
-      "Threading and pilfer-proof rollers included",
-      "Adjustable pressure spring assembly",
-      "Compatible with 18mm to 38mm ROPP caps",
-      "Fits all standard Indian and imported ROPP machines",
+      "Hardened threading and pilfer-proof rollers",
+      "Adjustable spring pressure for consistent torque",
+      "Compatible with all standard ROPP capping machines",
+      "Mirror-finish surface for hygienic operation",
       "Ready stock available for fast dispatch",
       "Custom sizes manufactured on order"
     ]
@@ -383,5 +382,49 @@ export const products: Product[] = [
       "Compatible with all rotary filling and capping machines",
       "Ready stock for common bottle sizes"
     ]
+  },
+  {
+    id: "spare-3",
+    category: "spare-parts",
+    name: "High-Precision ROPP Capping Head",
+    image: "/New 1jpeg.jpeg",
+    description: "Superior Ra value ROPP capping head for food-grade and pharma applications. Features hardened rollers and adjustable torque spring.",
+    specs: { "Material": "Hardened Tool Steel", "Compatibility": "22mm - 38mm Caps", "Finish": "Mirror Polished" },
+    industries: ["Pharma", "Food", "Beverage"],
+    badge: "New Arrival",
+    badgeColor: "var(--secondary)"
+  },
+  {
+    id: "spare-4",
+    category: "spare-parts",
+    name: "Capping Head Multi-Assembly",
+    image: "/New2.jpeg",
+    description: "Twin assembly set of high-performance capping heads. Precision machined for 100% standard fitment and long-term durability.",
+    specs: { "Type": "Rotary / Inline", "Material": "Stainless Steel + Tool Steel", "Adjustment": "Threaded" },
+    industries: ["Liquor", "Beverage"],
+    badge: "Premium Quality",
+    badgeColor: "var(--primary)"
+  },
+  {
+    id: "spare-5",
+    category: "spare-parts",
+    name: "Precision Shop Assembly Unit",
+    image: "/New 3.jpeg",
+    description: "Complete assembly unit for high-speed rotary machines. Engineered for perfect alignment and zero-vibration performance.",
+    specs: { "Type": "Main Assembly", "Accuracy": "±0.05 mm", "Application": "Rotary Machines" },
+    industries: ["Packaging", "Heavy Industry"],
+    badge: "Technical Spare",
+    badgeColor: "#475569"
+  },
+  {
+    id: "spare-8",
+    category: "spare-parts",
+    name: "Main Spindle Assembly Part",
+    image: "/New 6.jpeg",
+    description: "Critical spindle component for high-torque capping operations. Built for zero-vibration performance at high BPH.",
+    specs: { "Grade": "AISI 304 / 316", "Assembly": "Integrated Bearings", "Load": "High Axial Load" },
+    industries: ["Chemicals", "Oils"],
+    badge: "OEM Standard",
+    badgeColor: "#7c3aed"
   },
 ];

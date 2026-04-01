@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FiX, FiArrowLeft, FiArrowRight, FiGrid, FiList } from "react-icons/fi";
 
-const categories = ["All", "Factory Photos", "Machinery"];
+const categories = ["All", "Factory Photos", "Machinery", "Spare Parts"];
 
 const galleryData = [
   { src: "/Factory1.jpeg", alt: "Main Production Floor", category: "Factory Photos", title: "Main Manufacturing Unit" },
@@ -18,9 +18,12 @@ const galleryData = [
   { src: "/real-screw-capping.jpeg", alt: "Screw Capping Machine", category: "Machinery", title: "Screw Cap Closing Machine" },
   { src: "/real-machine1.jpeg", alt: "Volumetric Filling Machine", category: "Machinery", title: "Volumetric Piston Filling Machine" },
   { src: "/real-machine2.jpeg", alt: "Bottle Rinsing Machine", category: "Machinery", title: "Rotary Bottle Rinsing Machine" },
-  { src: "/real-capping-head.jpeg", alt: "Capping Head", category: "Machinery", title: "ROPP Capping Head Detail" },
-  { src: "/real-star-plate.jpeg", alt: "Star Wheel", category: "Machinery", title: "Star Wheel & Neck Guide" },
-  { src: "/real-capping-assembly.jpeg", alt: "Capping Assembly", category: "Machinery", title: "Capping Head Assembly" },
+  { src: "/New 1jpeg.jpeg", alt: "ROPP Capping Head", category: "Spare Parts", title: "High-Precision Capping Head" },
+  { src: "/New2.jpeg", alt: "Machine Component", category: "Spare Parts", title: "Precision Machined Component" },
+  { src: "/New 3.jpeg", alt: "Capping Head Shop Assembly", category: "Spare Parts", title: "Technical Assembly Unit" },
+  { src: "/New 6.jpeg", alt: "Capping Assembly", category: "Spare Parts", title: "ROPP Head Spare Assembly" },
+  { src: "/real-star-plate.jpeg", alt: "Star Wheel", category: "Spare Parts", title: "Star Wheel & Neck Guide" },
+  { src: "/real-capping-assembly.jpeg", alt: "Capping Assembly", category: "Spare Parts", title: "Capping Head Assembly" },
   { src: "/real-giva-assembly.jpeg", alt: "Machine Assembly", category: "Machinery", title: "Assembly & Fabrication Unit" },
   { src: "/real-assembly.jpeg", alt: "Parts Assembly", category: "Machinery", title: "Precision Parts Assembly" },
 ];

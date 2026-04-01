@@ -128,92 +128,182 @@ export default function ProductsClient() {
       </section>
 
       {/* Products Grid */}
-      <section style={{ background: "var(--bg-secondary)", padding: "60px 0" }} ref={sectionRef}>
+      <section style={{ background: "#f8fafc", padding: "80px 0" }} ref={sectionRef}>
         <div className="container-custom">
-          <p style={{ color: "var(--text-muted)", fontSize: "0.875rem", marginBottom: "32px", fontFamily: "'Poppins', sans-serif" }}>
-            Showing <strong>{filtered.length}</strong> products
-            {activeCategory !== "all" && ` in "${categories.find((c) => c.id === activeCategory)?.label}"`}
-            {searchQuery && ` matching "${searchQuery}"`}
-          </p>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "40px" }}>
+            <p style={{ color: "var(--text-muted)", fontSize: "0.9rem", fontFamily: "'Poppins', sans-serif", margin: 0 }}>
+              Showing <strong>{filtered.length}</strong> high-performance machines
+            </p>
+            <div style={{ color: "var(--primary)", fontWeight: 700, fontSize: "0.9rem" }}>
+              {activeCategory !== "all" && categories.find(c => c.id === activeCategory)?.label}
+            </div>
+          </div>
 
           {filtered.length === 0 ? (
-            <div style={{ textAlign: "center", padding: "80px 20px" }}>
-              <div style={{ fontSize: "3rem", marginBottom: "16px", color: "var(--primary)" }}><FaSearch /></div>
-              <h3 style={{ fontFamily: "'Poppins', sans-serif", color: "var(--primary)", marginBottom: "8px" }}>No Products Found</h3>
-              <p style={{ color: "var(--text-muted)" }}>Try adjusting your search or filter criteria.</p>
-              <button onClick={() => { setSearchQuery(""); setActiveCategory("all"); }} className="btn-primary" style={{ marginTop: "20px", border: "none" }}>
-                Show All Products
+            <div style={{ textAlign: "center", padding: "100px 20px", background: "white", borderRadius: "32px", border: "1px solid var(--border)" }}>
+              <div style={{ fontSize: "4rem", marginBottom: "20px", color: "var(--primary-light)", opacity: 0.5 }}><FaSearch /></div>
+              <h3 style={{ fontFamily: "'Poppins', sans-serif", color: "var(--primary)", fontSize: "1.5rem", marginBottom: "12px" }}>No Precision Matches</h3>
+              <p style={{ color: "var(--text-muted)", maxWidth: "400px", margin: "0 auto" }}>We couldn&apos;t find any products matching your current filters. Try resetting your search.</p>
+              <button onClick={() => { setSearchQuery(""); setActiveCategory("all"); }} className="btn-blue" style={{ marginTop: "24px" }}>
+                Reset All Filters
               </button>
             </div>
           ) : (
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "24px" }}>
+            <div style={{ 
+              display: "grid", 
+              gridTemplateColumns: "repeat(auto-fill, minmax(360px, 1fr))", 
+              gap: "40px" 
+            }}>
               {filtered.map((product, i) => (
                 <div
                   key={product.id}
                   className="product-card"
                   style={{
                     opacity: inView ? 1 : 0,
-                    transform: inView ? "translateY(0)" : "translateY(20px)",
-                    transition: `all 0.4s ease ${i * 0.07}s`,
+                    transform: inView ? "translateY(0)" : "translateY(40px)",
+                    transition: `all 0.6s cubic-bezier(0.2, 1, 0.3, 1) ${i * 0.08}s`,
                     display: "flex",
                     flexDirection: "column",
                     height: "100%",
-                    background: "#ffffff",
+                    background: "white",
+                    borderRadius: "28px",
+                    overflow: "hidden",
+                    border: "1px solid rgba(15,61,94,0.06)",
+                    boxShadow: "0 20px 50px rgba(15,61,94,0.05)",
+                    position: "relative"
                   }}
                 >
-                  <div className="card-image-wrap">
-                    <Image src={product.image} alt={product.name} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" style={{ objectFit: "contain", padding: "16px", mixBlendMode: "multiply", backgroundColor: "white" }} loading="lazy" />
-                    {product.badge && (
-                      <div style={{ position: "absolute", top: "14px", left: "14px", background: product.badgeColor, color: "white", padding: "4px 12px", borderRadius: "50px", fontSize: "0.72rem", fontWeight: 700, fontFamily: "'Poppins', sans-serif" }}>
-                        {product.badge}
+                  {/* Image Frame */}
+                  <div style={{ padding: "12px" }}>
+                    <div style={{
+                      position: "relative",
+                      height: "280px",
+                      background: "linear-gradient(180deg, #f1f5f9 0%, #ffffff 100%)",
+                      borderRadius: "20px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      padding: "24px",
+                      overflow: "hidden",
+                      border: "1px solid rgba(15,61,94,0.05)"
+                    }}>
+                      <div style={{ position: "relative", width: "100%", height: "100%", transition: "transform 0.6s ease" }} className="product-image-container">
+                        <Image 
+                          src={product.image} 
+                          alt={product.name} 
+                          fill 
+                          sizes="(max-width: 768px) 100vw, 33vw" 
+                          style={{ objectFit: "contain", filter: "drop-shadow(0 15px 30px rgba(0,0,0,0.12))" }} 
+                        />
                       </div>
-                    )}
+                      
+                      {product.badge && (
+                        <div style={{
+                          position: "absolute", top: "16px", left: "16px",
+                          background: product.badgeColor || "var(--secondary)",
+                          color: "white",
+                          padding: "6px 14px",
+                          borderRadius: "10px",
+                          fontSize: "0.7rem",
+                          fontWeight: 800,
+                          fontFamily: "'Poppins', sans-serif",
+                          boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+                          zIndex: 2,
+                          textTransform: "uppercase"
+                        }}>
+                          {product.badge}
+                        </div>
+                      )}
+                    </div>
                   </div>
 
-                  <div style={{ padding: "24px", display: "flex", flexDirection: "column", flex: 1 }}>
-                    <div style={{ display: "inline-block", background: "rgba(15,61,94,0.08)", color: "var(--primary)", padding: "4px 12px", borderRadius: "50px", fontSize: "0.75rem", fontWeight: 600, fontFamily: "'Poppins', sans-serif", letterSpacing: "0.5px", textTransform: "uppercase", marginBottom: "12px", alignSelf: "flex-start" }}>
-                      {categories.find((c) => c.id === product.category)?.label}
+                  <div style={{ padding: "32px", display: "flex", flexDirection: "column", flex: 1, gap: "16px" }}>
+                    <div>
+                      <div style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "6px",
+                        color: "var(--secondary)",
+                        fontSize: "0.8rem",
+                        fontWeight: 700,
+                        textTransform: "uppercase",
+                        letterSpacing: "1px",
+                        marginBottom: "12px",
+                        fontFamily: "'Poppins', sans-serif"
+                      }}>
+                        <span style={{ width: "15px", height: "2px", background: "currentColor" }} />
+                        {categories.find(c => c.id === product.category)?.label}
+                      </div>
+                      <h3 style={{
+                        fontFamily: "'Poppins', sans-serif",
+                        fontWeight: 800,
+                        fontSize: "1.4rem",
+                        color: "var(--primary)",
+                        lineHeight: "1.3",
+                        margin: 0,
+                        height: "3.6rem",
+                        overflow: "hidden",
+                        display: "-webkit-box",
+                        WebkitLineClamp: 2,
+                        WebkitBoxOrient: "vertical"
+                      }}>
+                        {product.name}
+                      </h3>
                     </div>
-                    <h3 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "1.2rem", color: "var(--primary)", marginBottom: "8px", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden", minHeight: "2.8rem", lineHeight: "1.4" }}>
-                      {product.name}
-                    </h3>
-                    <p style={{ color: "var(--text-secondary)", fontSize: "0.875rem", lineHeight: 1.6, marginBottom: "20px", display: "-webkit-box", WebkitLineClamp: 4, WebkitBoxOrient: "vertical", overflow: "hidden", flex: 1 }}>
+
+                    <p style={{
+                      color: "var(--text-secondary)",
+                      fontSize: "0.9rem",
+                      lineHeight: 1.7,
+                      margin: 0,
+                      display: "-webkit-box",
+                      WebkitLineClamp: 3,
+                      WebkitBoxOrient: "vertical",
+                      overflow: "hidden",
+                      flex: 1,
+                      opacity: 0.85
+                    }}>
                       {product.description}
                     </p>
 
-                    {/* Specs */}
-                    <div style={{ background: "var(--bg-secondary)", borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
-                      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px" }}>
-                        {Object.entries(product.specs).slice(0, 4).map(([key, val]) => (
-                          <div key={key}>
-                            <div style={{ fontSize: "0.7rem", color: "var(--text-muted)", fontFamily: "'Inter', sans-serif", textTransform: "uppercase", letterSpacing: "0.5px" }}>{key}</div>
-                            <div style={{ fontSize: "0.82rem", color: "var(--primary)", fontWeight: 600, fontFamily: "'Poppins', sans-serif" }}>{val}</div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Industries */}
-                    <div style={{ display: "flex", gap: "6px", flexWrap: "wrap", marginBottom: "18px" }}>
-                      {product.industries.map((ind) => (
-                        <span key={ind} style={{ display: "flex", alignItems: "center", gap: "4px", background: "rgba(230,57,70,0.08)", color: "var(--secondary)", padding: "3px 10px", borderRadius: "50px", fontSize: "0.72rem", fontWeight: 600, fontFamily: "'Poppins', sans-serif" }}>
-                          <FiCheck size={10} /> {ind}
-                        </span>
+                    {/* Technical Specs Grid */}
+                    <div style={{ 
+                      display: "grid", 
+                      gridTemplateColumns: "1fr 1fr", 
+                      gap: "12px",
+                      background: "rgba(15,61,94,0.03)",
+                      padding: "16px",
+                      borderRadius: "16px",
+                      marginTop: "10px"
+                    }}>
+                      {Object.entries(product.specs).slice(0, 4).map(([key, val]) => (
+                        <div key={key}>
+                          <div style={{ fontSize: "0.65rem", color: "var(--text-muted)", textTransform: "uppercase", fontWeight: 700, letterSpacing: "0.5px" }}>{key}</div>
+                          <div style={{ fontSize: "0.85rem", color: "var(--primary)", fontWeight: 700 }}>{val}</div>
+                        </div>
                       ))}
                     </div>
 
-                    <div style={{ display: "flex", gap: "12px", marginTop: "auto" }}>
-                      <Link href={`/products/${product.id}`} className="btn-blue" style={{ flex: 1, justifyContent: "center", padding: "12px 20px" }}>
-                        View Details
+                    <div style={{ display: "flex", gap: "12px", marginTop: "12px" }}>
+                      <Link href={`/products/${product.id}`} className="btn-blue" style={{ flex: 1, justifyContent: "center", height: "52px", borderRadius: "12px", fontSize: "0.9rem", fontWeight: 700 }}>
+                        Technical Specs
                       </Link>
                       <a
                         href={`https://wa.me/919725397262?text=Hello%2C%20I%20am%20interested%20in%20${encodeURIComponent(product.name)}.`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="whatsapp-btn-hover"
-                        style={{ display: "flex", alignItems: "center", justifyContent: "center", background: "#25D366", color: "white", width: "48px", borderRadius: "10px", textDecoration: "none", fontSize: "1.2rem", flexShrink: 0, transition: "all 0.3s ease" }}
+                        style={{
+                          display: "flex", alignItems: "center", justifyContent: "center",
+                          background: "#25D366",
+                          color: "white",
+                          width: "52px", borderRadius: "12px",
+                          fontSize: "1.4rem",
+                          flexShrink: 0,
+                          boxShadow: "0 8px 16px rgba(37,211,102,0.2)"
+                        }}
                       >
-                        <FaWhatsapp size={22} />
+                        <FaWhatsapp />
                       </a>
                     </div>
                   </div>
@@ -222,6 +312,19 @@ export default function ProductsClient() {
             </div>
           )}
         </div>
+        <style jsx>{`
+          .product-card {
+            transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1) !important;
+          }
+          .product-card:hover {
+            transform: translateY(-12px) scale(1.02) !important;
+            box-shadow: 0 40px 80px rgba(15,61,94,0.12) !important;
+            border-color: rgba(15,61,94,0.1) !important;
+          }
+          .product-card:hover .product-image-container {
+            transform: scale(1.08);
+          }
+        `}</style>
       </section>
 
       {/* Bottom CTA */}
