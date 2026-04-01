@@ -247,9 +247,26 @@ export default function ProductsSection() {
                 { src: encodeURI("/New 8.jpeg"), title: "Quality Manufacturing", fit: "contain" },
                 { src: encodeURI("/Factory5.jpeg"), title: "Quality Lab", fit: "cover" },
               ].map((img, idx) => (
-                <div key={idx} style={{ position: "relative", height: "clamp(120px, 20vw, 180px)", borderRadius: "16px", overflow: "hidden", background: "white", border: "1px solid var(--border)", boxShadow: "0 10px 25px rgba(0,0,0,0.05)" }}>
-                  <Image src={img.src} alt={img.title} fill style={{ objectFit: img.fit as any, padding: img.fit === "contain" ? "10px" : "0" }} />
-                  <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "10px", background: "rgba(15,23,42,0.7)", backdropFilter: "blur(4px)", color: "white", fontSize: "0.75rem", fontWeight: 700, textAlign: "center" }}>
+                <div key={idx} style={{ 
+                  position: "relative", 
+                  height: "clamp(120px, 22vw, 180px)", 
+                  borderRadius: "16px", 
+                  overflow: "hidden", 
+                  background: "white", 
+                  border: "1px solid var(--border)", 
+                  boxShadow: "0 10px 25px rgba(0,0,0,0.05)" 
+                }}>
+                  <Image 
+                    src={img.src} 
+                    alt={img.title} 
+                    fill 
+                    style={{ 
+                      objectFit: img.fit as any, 
+                      padding: img.fit === "contain" ? "4px" : "0", // Reduced padding
+                      transform: img.fit === "contain" ? "scale(1.2)" : "none" // Increased scale for tiny parts
+                    }} 
+                  />
+                  <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "8px", background: "rgba(15,23,42,0.8)", backdropFilter: "blur(6px)", color: "white", fontSize: "0.75rem", fontWeight: 700, textAlign: "center" }}>
                     {img.title}
                   </div>
                 </div>
