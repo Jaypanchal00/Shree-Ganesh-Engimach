@@ -15,35 +15,24 @@ export default function ContactClient() {
     setLoading(true);
 
     try {
-      // 1. Send Automatic Email via API
-      await axios.post("/api/contact", form);
+      const response = await axios.post("/api/contact", form);
+      if (response.data.success) {
+        setSubmitted(true);
+      } else {
+        alert("Failed to send message. Please try again or contact us directly.");
+      }
     } catch (error) {
       console.error("API Email Error:", error);
-      // We don't stop here, we still allow WhatsApp redirect as fallback
+      alert("Failed to send message. Please check your connection and try again.");
+    } finally {
+      setLoading(false);
     }
-
-    // 2. Construct WhatsApp message for manual notify
-    const waMsg = `*New Inquiry from Website*%0A%0A` +
-      `*Name:* ${form.name}%0A` +
-      `*Company:* ${form.company || "N/A"}%0A` +
-      `*Email:* ${form.email}%0A` +
-      `*Phone:* ${form.phone}%0A` +
-      `*Product:* ${form.product || "General Inquiry"}%0A` +
-      `*Message:* ${form.message}`;
-
-    const whatsappUrl = `https://wa.me/919725397262?text=${waMsg}`;
-    
-    // Open WhatsApp in new tab
-    window.open(whatsappUrl, "_blank");
-    
-    setLoading(false);
-    setSubmitted(true);
   };
 
   const contactInfo = [
     { icon: <FiPhone size={22} />, label: "Phone", value: "+91 97253 97262", href: "tel:+919725397262", color: "var(--primary)" },
     { icon: <FaWhatsapp size={22} />, label: "WhatsApp", value: "+91 97253 97262", href: "https://wa.me/919725397262", color: "#25D366" },
-    { icon: <FiMail size={22} />, label: "Email", value: "rishipanchal1999@gmail.com", href: "mailto:rishipanchal1999@gmail.com", color: "var(--secondary)" },
+    { icon: <FiMail size={22} />, label: "Email", value: "jkpanchal3491@gmail.com", href: "mailto:jkpanchal3491@gmail.com", color: "var(--secondary)" },
     { icon: <FiMapPin size={22} />, label: "Address", value: "Shed No 22/A, Rameshwar Ind. Estate, Odhav, Ahmedabad-382415", href: "https://www.google.co.in/maps/dir//23.02705,72.64902/@23.0588416,72.6663168,14z", color: "#7c3aed" },
   ];
 
@@ -117,10 +106,10 @@ export default function ContactClient() {
                 <div style={{ textAlign: "center", padding: "40px 20px" }}>
                   <FiCheckCircle size={60} style={{ color: "#059669", marginBottom: "20px" }} />
                   <h3 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "1.4rem", color: "var(--primary)", marginBottom: "12px" }}>
-                    Inquiry Received!
+                    Inquiry Sent Successfully!
                   </h3>
                   <p style={{ color: "var(--text-secondary)", marginBottom: "24px" }}>
-                    Thank you! We have sent a copy of your inquiry to your WhatsApp. Our team will review and contact you shortly.
+                    Thank you! Your inquiry has been sent successfully. Our team will review it and contact you shortly.
                   </p>
                   <button onClick={() => { setSubmitted(false); setForm({ name: "", company: "", email: "", phone: "", product: "", message: "" }); }} className="btn-primary" style={{ border: "none", cursor: "pointer" }}>
                     Send Another Message
