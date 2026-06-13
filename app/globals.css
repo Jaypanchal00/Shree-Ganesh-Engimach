@@ -3,26 +3,30 @@
 /* Shree Ganesh Engimach - Premium Industrial Design System */
 
 :root {
-  --primary: #0f172a;
-  --primary-dark: #020617;
-  --primary-light: #374151;
-  --secondary: #2563EB;
-  --secondary-dark: #1D4ED8;
-  --accent: #10B981;
+  --primary: #0a0f1d;
+  --primary-dark: #030712;
+  --primary-light: #1e293b;
+  --secondary: #3b82f6;
+  --secondary-dark: #1d4ed8;
+  --secondary-light: #60a5fa;
+  --accent: #ff6b00;
+  --accent-dark: #d84b00;
+  --accent-light: #ff8533;
   --bg: #ffffff;
-  --bg-secondary: #F3F4F6;
-  --bg-dark: #111827;
-  --text-primary: #1F2937;
-  --text-secondary: #4B5563;
-  --text-muted: #9CA3AF;
-  --border: #E5E7EB;
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
-  --shadow-md: 0 4px 20px rgba(0,0,0,0.1);
-  --shadow-lg: 0 10px 40px rgba(0,0,0,0.15);
-  --shadow-xl: 0 20px 60px rgba(0,0,0,0.2);
-  --gradient-primary: linear-gradient(135deg, #111827 0%, #374151 100%);
-  --gradient-secondary: linear-gradient(135deg, #2563EB 0%, #60A5FA 100%);
-  --gradient-hero: linear-gradient(135deg, rgba(3,7,18,0.92) 0%, rgba(17,24,39,0.85) 50%, rgba(37,99,235,0.15) 100%);
+  --bg-secondary: #f8fafc;
+  --bg-dark: #0f172a;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --border: #e2e8f0;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --gradient-primary: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  --gradient-secondary: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+  --gradient-accent: linear-gradient(135deg, #ff6b00 0%, #ff9e00 100%);
+  --gradient-hero: linear-gradient(135deg, rgba(3,7,18,0.96) 0%, rgba(10,15,30,0.93) 50%, rgba(59,130,246,0.15) 100%);
 }
 
 * {
@@ -445,7 +449,7 @@ h1, h2, h3, h4, h5, h6 {
 .red-line {
   width: 60px;
   height: 4px;
-  background: var(--gradient-secondary);
+  background: var(--gradient-accent);
   border-radius: 2px;
   margin: 16px 0 24px;
 }
@@ -453,7 +457,7 @@ h1, h2, h3, h4, h5, h6 {
 .red-line-center {
   width: 60px;
   height: 4px;
-  background: var(--gradient-secondary);
+  background: var(--gradient-accent);
   border-radius: 2px;
   margin: 16px auto 24px;
 }

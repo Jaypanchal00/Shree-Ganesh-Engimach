@@ -44,10 +44,10 @@ function AnimatedCounter({ target, suffix = "", prefix = "" }: { target: number;
 }
 
 const stats = [
-  { target: 5, suffix: "+", label: "Years Experience", icon: <FiAward />, desc: "Since 2019", color: "#F59E0B" },
-  { target: 500, suffix: "+", label: "Machines Delivered", icon: <FiSettings />, desc: "Across India", color: "#3B82F6" },
+  { target: 5, suffix: "+", label: "Years Experience", icon: <FiAward />, desc: "Since 2019", color: "var(--accent)" },
+  { target: 500, suffix: "+", label: "Machines Delivered", icon: <FiSettings />, desc: "Across India", color: "var(--secondary)" },
   { target: 200, suffix: "+", label: "Happy Clients", icon: <FiUsers />, desc: "Trusted by industries", color: "#10B981" },
-  { target: 1, suffix: "", label: "Manufacturing Unit", icon: <FiHome />, desc: "State-of-the-art", color: "#EC4899" },
+  { target: 1, suffix: "", label: "Manufacturing Unit", icon: <FiHome />, desc: "State-of-the-art", color: "#06b6d4" },
 ];
 
 export default function StatsSection() {
@@ -58,7 +58,7 @@ export default function StatsSection() {
     <section
       ref={sectionRef}
       style={{
-        background: "linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #1e40af 100%)",
+        background: "linear-gradient(180deg, #0a0f1d 0%, #030712 100%)",
         padding: "100px 0",
         position: "relative",
         overflow: "hidden",

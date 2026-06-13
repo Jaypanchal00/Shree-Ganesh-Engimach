@@ -54,7 +54,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                         <div style={{ fontSize: "0.75rem", color: "var(--text-muted)" }}>On all spare parts</div>
                     </div>
                  </div>
-                 <div style={{ display: "flex", alignItems: "center", gap: "12px", padding: "16px", background: "rgba(230,57,70,0.04)", borderRadius: "16px", border: "1px solid rgba(230,57,70,0.08)" }}>
+                 <div style={{ display: "flex", alignItems: "center", gap: "12px", padding: "16px", background: "rgba(59, 130, 246, 0.04)", borderRadius: "16px", border: "1px solid rgba(59, 130, 246, 0.08)" }}>
                     <FiSettings size={24} style={{ color: "var(--secondary)" }} />
                     <div>
                         <div style={{ fontSize: "0.85rem", fontWeight: 700, color: "var(--secondary)" }}>Free Installation</div>

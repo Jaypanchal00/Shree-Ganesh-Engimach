@@ -20,7 +20,7 @@ const steps = [
     title: "Design & Engineering",
     icon: <FaDraftingCompass />,
     description: "Our expert engineers create detailed CAD designs and production drawings tailored to your specifications and production requirements.",
-    color: "var(--primary)",
+    color: "var(--primary-light)",
   },
   {
     number: "02",
@@ -34,21 +34,21 @@ const steps = [
     title: "Assembly",
     icon: <FaScrewdriver />,
     description: "Skilled technicians assemble machines in our clean room environment following strict SOPs and quality guidelines.",
-    color: "#7c3aed",
+    color: "var(--accent)",
   },
   {
     number: "04",
     title: "Testing & QC",
     icon: <FaMicroscope />,
     description: "Each machine undergoes comprehensive factory acceptance tests including performance, speed, and accuracy validation.",
-    color: "#0891b2",
+    color: "var(--secondary-dark)",
   },
   {
     number: "05",
     title: "Delivery & Commissioning",
     icon: <FaTruck />,
     description: "Safe packaging, nationwide delivery, on-site installation, operator training, and post-installation support included.",
-    color: "#059669",
+    color: "var(--accent-dark)",
   },
 ];
 
@@ -58,7 +58,7 @@ export default function ManufacturingProcess() {
 
   return (
     <section
-      style={{ background: "linear-gradient(135deg, #f0f4f8 0%, #e8f0f8 100%)", padding: "100px 0", position: "relative", overflow: "hidden" }}
+      style={{ background: "linear-gradient(180deg, #f8fafc 0%, #ffffff 100%)", padding: "100px 0", position: "relative", overflow: "hidden" }}
       ref={sectionRef}
     >
       {/* Background decoration */}
@@ -95,7 +95,7 @@ export default function ManufacturingProcess() {
                 transitionDelay: `${i * 0.1}s`,
               }}
             >
-              <div className="timeline-line" />
+              <div className="timeline-line" style={{ background: "linear-gradient(180deg, var(--secondary) 0%, var(--accent) 100%)", opacity: 0.5 }} />
               {/* Dot */}
               <div
                 className="timeline-dot"

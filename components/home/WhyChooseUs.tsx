@@ -59,7 +59,7 @@ export default function WhyChooseUs() {
   const inView = useInView(sectionRef);
 
   return (
-    <section className="section-padding" style={{ background: "white" }} ref={sectionRef}>
+    <section className="section-padding" style={{ background: "linear-gradient(180deg, #ffffff 0%, #f8fafc 100%)" }} ref={sectionRef}>
       <div className="container-custom">
         <div className="responsive-grid-900" style={{ display: "grid", gap: "clamp(32px, 5vw, 80px)", alignItems: "center" }}>
           {/* Left */}
@@ -86,7 +86,7 @@ export default function WhyChooseUs() {
                 "GST Invoice & Complete Documentation",
               ].map((point, i) => (
                 <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
-                  <FiCheckCircle size={18} style={{ color: "var(--secondary)", flexShrink: 0, marginTop: "2px" }} />
+                  <FiCheckCircle size={18} style={{ color: "var(--accent)", flexShrink: 0, marginTop: "2px" }} />
                   <span style={{ color: "var(--text-secondary)", fontSize: "0.95rem", lineHeight: 1.6 }}>{point}</span>
                 </div>
               ))}

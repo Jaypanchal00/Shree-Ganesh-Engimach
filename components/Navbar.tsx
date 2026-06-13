@@ -40,8 +40,8 @@ export default function Navbar() {
               <FiPhone size={12} />
               +91 97253 97262
             </a>
-            <a href="mailto:rishipanchal1999@gmail.com" style={{ color: "rgba(255,255,255,0.9)", fontSize: "0.75rem", textDecoration: "none" }}>
-              rishipanchal1999@gmail.com
+            <a href="mailto:jkpanchal3491@gmail.com" style={{ color: "rgba(255,255,255,0.9)", fontSize: "0.75rem", textDecoration: "none" }}>
+              jkpanchal3491@gmail.com
             </a>
           </div>
         </div>
@@ -53,23 +53,23 @@ export default function Navbar() {
           position: "sticky",
           top: 0,
           zIndex: 999,
-          background: scrolled ? "rgba(255,255,255,0.97)" : "white",
-          backdropFilter: scrolled ? "blur(20px)" : "none",
-          boxShadow: scrolled ? "0 4px 30px rgba(0,0,0,0.1)" : "0 2px 10px rgba(0,0,0,0.06)",
-          transition: "all 0.3s ease",
-          borderBottom: "1px solid rgba(0,0,0,0.06)",
+          background: scrolled ? "rgba(255, 255, 255, 0.8)" : "rgba(255, 255, 255, 0.95)",
+          backdropFilter: "blur(20px)",
+          boxShadow: scrolled ? "0 10px 30px -10px rgba(10, 15, 29, 0.08)" : "0 2px 10px rgba(0,0,0,0.03)",
+          transition: "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
+          borderBottom: "1px solid rgba(10, 15, 29, 0.05)",
         }}
       >
         <div className="container-custom" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px clamp(12px, 4vw, 24px)" }}>
           {/* Logo */}
           <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
-            <div style={{ position: "relative", width: "clamp(200px, 50vw, 320px)", height: "70px", overflow: "visible" }}>
+            <div style={{ position: "relative", width: "clamp(130px, 16vw, 160px)", height: "clamp(65px, 8vw, 80px)" }}>
               <Image
-                src="/main-logo.png"
+                src="/main-logo-v2.png"
                 alt="Shree Ganesh Engimach Logo"
                 fill
-                sizes="(max-width: 768px) 200px, 320px"
-                style={{ objectFit: "contain", transform: "scale(1.6)" }}
+                sizes="(max-width: 768px) 130px, 160px"
+                style={{ objectFit: "contain" }}
                 priority
               />
             </div>

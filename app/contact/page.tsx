@@ -58,7 +58,7 @@ const contactSchema = {
     "@type": "Organization",
     name: "Shree Ganesh Engimach",
     telephone: "+91-9725397262",
-    email: "rishipanchal1999@gmail.com",
+    email: "jkpanchal3491@gmail.com",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Shed No 22/A, Rameshwar Ind. Estate, NR. Jay Chemical, Odhav",

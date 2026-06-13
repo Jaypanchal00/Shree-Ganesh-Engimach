@@ -107,33 +107,39 @@ export default function HeroSection() {
             {/* Badge */}
             <div style={{
               display: "inline-flex", alignItems: "center", gap: "8px",
-              background: "rgba(230,57,70,0.15)", border: "1px solid rgba(230,57,70,0.3)",
-              color: "#ff8589", padding: "8px 18px", borderRadius: "50px", marginBottom: "24px",
-              fontSize: "0.75rem", fontWeight: 600, letterSpacing: "1px", textTransform: "uppercase",
+              background: "rgba(255, 107, 0, 0.12)", border: "1px solid rgba(255, 107, 0, 0.25)",
+              color: "var(--accent-light)", padding: "8px 18px", borderRadius: "50px", marginBottom: "24px",
+              fontSize: "0.75rem", fontWeight: 700, letterSpacing: "1px", textTransform: "uppercase",
               fontFamily: "'Poppins', sans-serif",
             }}>
-              <MdOutlineVerified size={14} />
+              <MdOutlineVerified size={14} style={{ color: "var(--accent)" }} />
               Premium Machinery Manufacturer • Est. 2019
             </div>
 
             {/* Heading */}
-            <h1 style={{ color: "white", fontSize: "clamp(2rem, 5vw, 3.8rem)", fontWeight: 800, lineHeight: 1.1, marginBottom: "20px", fontFamily: "'Poppins', sans-serif" }}>
+            <h1 style={{ color: "white", fontSize: "clamp(2rem, 5vw, 3.8rem)", fontWeight: 900, lineHeight: 1.1, marginBottom: "20px", fontFamily: "'Poppins', sans-serif", letterSpacing: "-0.5px" }}>
               Premium{" "}
-              <span style={{ color: "var(--secondary)" }}>Bottle Packaging</span>
+              <span style={{ 
+                background: "linear-gradient(135deg, var(--secondary-light), var(--secondary))",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                textShadow: "0 0 30px rgba(59, 130, 246, 0.2)"
+              }}>Bottle Packaging</span>
               <br className="hide-on-mobile" />
               Machines &{" "}
               <span
                 style={{
-                  background: "linear-gradient(135deg, #90caf9, #42a5f5)",
+                  background: "var(--gradient-accent)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
+                  textShadow: "0 0 30px rgba(255, 107, 0, 0.2)"
                 }}
               >
                 Spare Parts
               </span>
             </h1>
 
-            <p style={{ color: "rgba(255,255,255,0.72)", fontSize: "clamp(0.95rem, 2vw, 1.1rem)", lineHeight: 1.6, marginBottom: "32px", maxWidth: "550px" }}>
+            <p style={{ color: "rgba(255,255,255,0.72)", fontSize: "clamp(0.95rem, 2vw, 1.05rem)", lineHeight: 1.7, marginBottom: "32px", maxWidth: "550px" }}>
               Engineering excellence since 2019. We design, manufacture, and supply state-of-the-art bottle packaging machines trusted by 500+ businesses across India.
             </p>
 
@@ -152,8 +158,8 @@ export default function HeroSection() {
             {/* Trust Badges */}
             <div className="hero-trust-grid">
               {[
-                { icon: <FiSettings />, label: "500+ Machines", sub: "Delivered", color: "#3B82F6" },
-                { icon: <FiAward />, label: "5+ Years", sub: "Experience", color: "#F59E0B" },
+                { icon: <FiSettings />, label: "500+ Machines", sub: "Delivered", color: "var(--secondary)" },
+                { icon: <FiAward />, label: "5+ Years", sub: "Experience", color: "var(--accent)" },
                 { icon: <FiUsers />, label: "200+ Clients", sub: "Satisfied", color: "#10B981" },
               ].map((badge, i) => (
                 <div 
@@ -163,36 +169,41 @@ export default function HeroSection() {
                     display: "flex",
                     alignItems: "center",
                     gap: "14px",
-                    background: "rgba(255,255,255,0.03)",
+                    background: "rgba(255,255,255,0.02)",
                     padding: "16px",
                     borderRadius: "16px",
                     border: "1px solid rgba(255,255,255,0.06)",
+                    borderLeft: `4px solid ${badge.color}`,
                     backdropFilter: "blur(10px)",
-                    transition: "all 0.4s ease",
+                    transition: "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
                     opacity: loaded ? 1 : 0,
                     transform: loaded ? "translateY(0)" : "translateY(20px)",
                     transitionDelay: `${i * 0.15 + 0.5}s`,
                   }}
                   onMouseOver={(e) => {
                     const el = e.currentTarget as HTMLElement;
-                    el.style.background = "rgba(255,255,255,0.07)";
-                    el.style.borderColor = badge.color + "55";
+                    el.style.background = "rgba(255,255,255,0.05)";
+                    el.style.borderColor = "rgba(255,255,255,0.12)";
+                    el.style.borderLeftColor = badge.color;
                     el.style.transform = "translateY(-5px)";
+                    el.style.boxShadow = `0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 0 15px -3px ${badge.color}15`;
                   }}
                   onMouseOut={(e) => {
                     const el = e.currentTarget as HTMLElement;
-                    el.style.background = "rgba(255,255,255,0.03)";
+                    el.style.background = "rgba(255,255,255,0.02)";
                     el.style.borderColor = "rgba(255,255,255,0.06)";
+                    el.style.borderLeftColor = badge.color;
                     el.style.transform = "translateY(0)";
+                    el.style.boxShadow = "none";
                   }}
                 >
                   <div style={{
                     width: "40px", height: "40px",
-                    background: `${badge.color}15`,
+                    background: `rgba(255,255,255,0.04)`,
                     borderRadius: "10px",
                     display: "flex", alignItems: "center", justifyContent: "center",
                     fontSize: "1.2rem", color: badge.color,
-                    border: `1px solid ${badge.color}30`,
+                    border: `1px solid rgba(255,255,255,0.08)`,
                     flexShrink: 0
                   }}>
                     {badge.icon}
@@ -258,23 +269,24 @@ export default function HeroSection() {
               <div
                 style={{
                   position: "absolute", bottom: "10%", left: "-5%",
-                  background: "rgba(37, 99, 235, 0.95)",
+                  background: "rgba(10, 15, 29, 0.8)",
                   backdropFilter: "blur(20px)",
                   borderRadius: "16px",
-                  padding: "12px 20px",
+                  padding: "14px 20px",
                   display: "flex", alignItems: "center", gap: "12px",
                   animation: "float 4s ease-in-out infinite 1s",
-                  boxShadow: "0 10px 30px rgba(37, 99, 235, 0.4)",
+                  border: "1px solid var(--secondary)",
+                  boxShadow: "0 10px 30px rgba(59, 130, 246, 0.25)",
                   zIndex: 5
                 }}
                 className="floating-card-mobile"
               >
-                <div style={{ fontSize: "1.5rem", color: "#ffd700", display: "flex", alignItems: "center" }}>
-                  <FaBolt />
+                <div style={{ position: "relative", width: "12px", height: "12px", background: "var(--accent)", borderRadius: "50%", boxShadow: "0 0 10px var(--accent)", flexShrink: 0 }}>
+                  <div style={{ position: "absolute", inset: "-4px", border: "2px solid var(--accent)", borderRadius: "50%", animation: "pulse-glow-wp 1.5s infinite" }} />
                 </div>
                 <div>
-                  <div style={{ color: "white", fontWeight: 700, fontSize: "0.9rem", fontFamily: "'Poppins', sans-serif" }}>Fast Delivery</div>
-                  <div style={{ color: "rgba(255,255,255,0.8)", fontSize: "0.75rem" }}>Worldwide Shipping</div>
+                  <div style={{ color: "white", fontWeight: 700, fontSize: "0.9rem", fontFamily: "'Poppins', sans-serif" }}>Smart Automation</div>
+                  <div style={{ color: "rgba(255,255,255,0.65)", fontSize: "0.75rem" }}>Precision Engineered</div>
                 </div>
               </div>
             </div>

@@ -44,7 +44,7 @@ export default function PrivacyPolicy() {
             If you have any questions about this Privacy Policy, please contact us at:<br />
             <strong>Shree Ganesh Engimach</strong><br />
             Shed No 22/A, Rameshwar Ind. Estate, Odhav, Ahmedabad<br />
-            Email: rishipanchal1999@gmail.com<br />
+            Email: jkpanchal3491@gmail.com<br />
             Phone: +91 97253 97262
           </p>
         </div>

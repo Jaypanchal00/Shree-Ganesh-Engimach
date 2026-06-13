@@ -53,15 +53,15 @@ export default function ProductsSection() {
               style={{
                 opacity: inView ? 1 : 0,
                 transform: inView ? "translateY(0)" : "translateY(50px)",
-                transition: `all 0.8s cubic-bezier(0.2, 1, 0.3, 1) ${i * 0.15}s`,
+                transition: `opacity 0.8s ease ${i * 0.15}s, transform 0.8s cubic-bezier(0.2, 1, 0.3, 1) ${i * 0.15}s`,
                 display: "flex",
                 flexDirection: "column",
                 height: "100%",
                 background: "white",
-                borderRadius: "32px",
+                borderRadius: "24px",
                 overflow: "hidden",
                 border: "1px solid rgba(15,61,94,0.06)",
-                boxShadow: "0 25px 80px rgba(15,61,94,0.08)",
+                boxShadow: "0 15px 40px rgba(15,61,94,0.04)",
                 position: "relative"
               }}
             >
@@ -77,8 +77,8 @@ export default function ProductsSection() {
                   justifyContent: "center",
                   padding: "24px",
                   overflow: "hidden",
-                  border: "1px solid rgba(15,61,94,0.1)",
-                  boxShadow: "inset 0 0 40px rgba(15,61,94,0.03)"
+                  border: "1px solid rgba(15,61,94,0.06)",
+                  boxShadow: "inset 0 0 40px rgba(15,61,94,0.02)"
                 }}>
                   <div style={{ 
                     position: "relative", 
@@ -118,7 +118,7 @@ export default function ProductsSection() {
                   {/* Hover Overlay */}
                   <div style={{
                     position: "absolute", inset: 0,
-                    background: "rgba(15,23,42,0.6)",
+                    background: "rgba(10,15,29,0.7)",
                     backdropFilter: "blur(6px)",
                     display: "flex", alignItems: "center", justifyContent: "center",
                     opacity: 0, transition: "all 0.4s ease",
@@ -132,7 +132,7 @@ export default function ProductsSection() {
               </div>
 
               {/* Content Section */}
-              <div style={{ padding: "0 40px 40px", display: "flex", flexDirection: "column", flex: 1, gap: "20px" }}>
+              <div style={{ padding: "0 32px 32px", display: "flex", flexDirection: "column", flex: 1, gap: "20px" }}>
                 <div>
                   <div style={{
                     display: "inline-flex",
@@ -143,7 +143,7 @@ export default function ProductsSection() {
                     fontWeight: 800,
                     textTransform: "uppercase",
                     letterSpacing: "1.5px",
-                    marginBottom: "16px",
+                    marginBottom: "12px",
                     fontFamily: "'Poppins', sans-serif"
                   }}>
                     <span style={{ width: "20px", height: "2px", background: "currentColor" }} />
@@ -151,12 +151,12 @@ export default function ProductsSection() {
                   </div>
                   <h3 style={{
                     fontFamily: "'Poppins', sans-serif",
-                    fontWeight: 900,
-                    fontSize: "1.5rem",
+                    fontWeight: 850,
+                    fontSize: "1.4rem",
                     color: "var(--primary)",
                     lineHeight: "1.25",
                     margin: 0,
-                    height: "3.75rem",
+                    height: "3.5rem",
                     overflow: "hidden",
                     display: "-webkit-box",
                     WebkitLineClamp: 2,
@@ -168,8 +168,8 @@ export default function ProductsSection() {
 
                 <p style={{
                   color: "var(--text-secondary)",
-                  fontSize: "0.95rem",
-                  lineHeight: 1.7,
+                  fontSize: "0.92rem",
+                  lineHeight: 1.6,
                   margin: 0,
                   display: "-webkit-box",
                   WebkitLineClamp: 3,
@@ -182,25 +182,26 @@ export default function ProductsSection() {
                 </p>
 
                 {/* Specs Pill */}
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
                   {Object.entries(product.specs).slice(0, 3).map(([key, val], j) => (
                     <div key={j} style={{
-                      background: "rgba(37,99,235,0.06)",
-                      color: "var(--secondary)",
-                      padding: "8px 14px",
-                      borderRadius: "10px",
-                      fontSize: "0.8rem",
-                      fontWeight: 700,
-                      fontFamily: "'Inter', sans-serif",
-                      border: "1px solid rgba(37,99,235,0.1)"
+                      background: "rgba(59, 130, 246, 0.04)",
+                      color: "var(--secondary-dark)",
+                      padding: "6px 12px",
+                      borderRadius: "8px",
+                      fontSize: "0.75rem",
+                      fontWeight: 650,
+                      fontFamily: "'Poppins', sans-serif",
+                      border: "1px solid rgba(59, 130, 246, 0.12)",
+                      letterSpacing: "0.2px"
                     }}>
                       {val}
                     </div>
                   ))}
                 </div>
 
-                <div style={{ display: "flex", gap: "16px", marginTop: "16px" }}>
-                  <Link href={`/products/${product.id}`} className="btn-blue" style={{ flex: 2, justifyContent: "center", height: "54px", borderRadius: "14px", fontSize: "0.95rem", fontWeight: 700 }}>
+                <div style={{ display: "flex", gap: "16px", marginTop: "8px" }}>
+                  <Link href={`/products/${product.id}`} className="btn-blue" style={{ flex: 2, justifyContent: "center", height: "50px", borderRadius: "12px", fontSize: "0.95rem", fontWeight: 700 }}>
                     Details
                   </Link>
                   <a
@@ -212,11 +213,12 @@ export default function ProductsSection() {
                       display: "flex", alignItems: "center", justifyContent: "center",
                       background: "#25D366",
                       color: "white",
-                      width: "54px", borderRadius: "14px",
+                      width: "50px", borderRadius: "12px",
                       textDecoration: "none",
-                      fontSize: "1.6rem",
+                      fontSize: "1.5rem",
                       flexShrink: 0,
-                      boxShadow: "0 10px 25px rgba(37,211,102,0.3)"
+                      boxShadow: "0 8px 20px rgba(37,211,102,0.25)",
+                      transition: "all 0.3s ease"
                     }}
                   >
                     <FaWhatsapp />

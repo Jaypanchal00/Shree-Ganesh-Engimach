@@ -10,7 +10,7 @@ export default function InquiryCTA() {
         position: "relative",
         padding: "120px 0",
         overflow: "hidden",
-        background: "linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%)",
+        background: "linear-gradient(180deg, #0a0f1d 0%, #030712 100%)",
       }}
     >
       {/* Pattern */}
@@ -29,7 +29,12 @@ export default function InquiryCTA() {
         <h2 style={{ color: "white", fontSize: "clamp(2rem, 4vw, 3.5rem)", fontWeight: 800, fontFamily: "'Poppins', sans-serif", marginBottom: "20px", lineHeight: 1.1 }}>
           Ready to Upgrade Your
           <br />
-          <span style={{ color: "#fbbf24" }}>Packaging Line?</span>
+          <span style={{ 
+            background: "var(--gradient-accent)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            textShadow: "0 0 30px rgba(255, 107, 0, 0.2)"
+          }}>Packaging Line?</span>
         </h2>
 
         <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "1.1rem", lineHeight: 1.7, maxWidth: "620px", margin: "0 auto 48px", fontFamily: "'Inter', sans-serif" }}>

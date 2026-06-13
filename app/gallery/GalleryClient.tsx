@@ -138,11 +138,10 @@ export default function GalleryClient() {
                   width: "100%", 
                   height: "clamp(220px, 35vw, 320px)", 
                   overflow: "hidden", 
-                  background: "linear-gradient(135deg, #f1f5f9 0%, #ffffff 100%)",
+                  background: "#f1f5f9",
                   display: "flex",
                   alignItems: "center",
-                  justifyContent: "center",
-                  padding: "16px"
+                  justifyContent: "center"
                 }}>
                   <Image 
                     src={encodeURI(item.src)} 
@@ -150,15 +149,14 @@ export default function GalleryClient() {
                     fill 
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
                     style={{ 
-                      objectFit: "contain", 
-                      transition: "transform 0.6s ease",
-                      filter: "drop-shadow(0 10px 25px rgba(15,61,94,0.12))"
+                      objectFit: "cover", 
+                      transition: "transform 0.6s ease"
                     }} 
                     loading="lazy" 
                   />
                   <div className="card-overlay" style={{
                     position: "absolute", inset: 0,
-                    background: "linear-gradient(to top, rgba(0,0,0,0.2) 0%, transparent 50%)",
+                    background: "linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 50%)",
                     opacity: 0, transition: "opacity 0.3s ease"
                   }} />
                 </div>

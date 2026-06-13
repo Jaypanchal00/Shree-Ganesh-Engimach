@@ -171,7 +171,7 @@ const localBusinessSchema = {
     "Manufacturer and supplier of high-quality bottle packaging machines including filling, capping, washing, labeling machines and spare parts. Serving industries across India since 2019.",
   url: BASE_URL,
   telephone: "+91-9725397262",
-  email: "rishipanchal1999@gmail.com",
+  email: "jkpanchal3491@gmail.com",
   priceRange: "₹₹₹",
   currenciesAccepted: "INR",
   paymentAccepted: "Cash, Bank Transfer, Cheque",

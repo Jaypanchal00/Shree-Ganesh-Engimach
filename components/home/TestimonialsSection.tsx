@@ -210,6 +210,14 @@ export default function TestimonialsSection() {
         .testimonial-track {
           --testimonial-width: calc(33.333% - 16px);
         }
+        .testimonial-track > div {
+          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+        .testimonial-track > div:hover {
+          transform: translateY(-6px) !important;
+          box-shadow: 0 20px 40px rgba(10, 15, 29, 0.08) !important;
+          border-color: var(--secondary) !important;
+        }
         @media (max-width: 1024px) {
           .testimonial-track {
             --testimonial-width: calc(50% - 12px);

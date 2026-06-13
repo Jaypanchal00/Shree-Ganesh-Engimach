@@ -70,19 +70,19 @@ export default function AboutClient() {
             <div style={{ position: "relative" }}>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px" }}>
               <div style={{ display: "grid", gap: "10px" }}>
-                <div style={{ width: "100%", height: "320px", background: "white", borderRadius: "24px", overflow: "hidden", border: "1px solid var(--border)", boxShadow: "0 10px 40px rgba(0,0,0,0.1)", position: "relative", padding: "10px" }}>
-                  <Image src="/Factory1.jpeg" alt="Factory Floor" fill style={{ objectFit: "contain" }} />
+                <div style={{ width: "100%", height: "320px", background: "white", borderRadius: "24px", overflow: "hidden", border: "1px solid var(--border)", boxShadow: "0 10px 40px rgba(0,0,0,0.1)", position: "relative" }}>
+                  <Image src="/Factory1.jpeg" alt="Factory Floor" fill style={{ objectFit: "cover" }} />
                 </div>
-                <div style={{ width: "100%", height: "180px", background: "white", borderRadius: "24px", overflow: "hidden", border: "1px solid var(--border)", boxShadow: "0 10px 40px rgba(0,0,0,0.1)", position: "relative", padding: "10px" }}>
-                  <Image src="/New 5.jpeg" alt="Precision Machining" fill style={{ objectFit: "contain" }} />
+                <div style={{ width: "100%", height: "180px", background: "white", borderRadius: "24px", overflow: "hidden", border: "1px solid var(--border)", boxShadow: "0 10px 40px rgba(0,0,0,0.1)", position: "relative" }}>
+                  <Image src="/New 5.jpeg" alt="Precision Machining" fill style={{ objectFit: "cover" }} />
                 </div>
               </div>
               <div style={{ display: "grid", gap: "10px", paddingTop: "30px" }}>
-                <div style={{ width: "100%", height: "180px", background: "white", borderRadius: "24px", overflow: "hidden", border: "1px solid var(--border)", boxShadow: "0 10px 40px rgba(0,0,0,0.1)", position: "relative", padding: "10px" }}>
-                  <Image src="/Factory2.jpeg" alt="Machinery" fill style={{ objectFit: "contain" }} />
+                <div style={{ width: "100%", height: "180px", background: "white", borderRadius: "24px", overflow: "hidden", border: "1px solid var(--border)", boxShadow: "0 10px 40px rgba(0,0,0,0.1)", position: "relative" }}>
+                  <Image src="/Factory2.jpeg" alt="Machinery" fill style={{ objectFit: "cover" }} />
                 </div>
-                <div style={{ width: "100%", height: "320px", background: "white", borderRadius: "24px", overflow: "hidden", border: "1px solid var(--border)", boxShadow: "0 10px 40px rgba(0,0,0,0.1)", position: "relative", padding: "10px" }}>
-                  <Image src="/Factory4.jpeg" alt="Dispatch Area" fill style={{ objectFit: "contain" }} />
+                <div style={{ width: "100%", height: "320px", background: "white", borderRadius: "24px", overflow: "hidden", border: "1px solid var(--border)", boxShadow: "0 10px 40px rgba(0,0,0,0.1)", position: "relative" }}>
+                  <Image src="/Factory4.jpeg" alt="Dispatch Area" fill style={{ objectFit: "cover" }} />
                 </div>
               </div>
             </div>

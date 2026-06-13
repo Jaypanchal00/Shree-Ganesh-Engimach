@@ -24,7 +24,7 @@ const quickLinks = [
 
 export default function Footer() {
   return (
-    <footer style={{ background: "#050a12", color: "white", paddingTop: "80px", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
+    <footer style={{ background: "linear-gradient(180deg, var(--primary) 0%, var(--primary-dark) 100%)", color: "white", paddingTop: "80px", borderTop: "1px solid rgba(255,255,255,0.08)" }}>
       <div className="container-custom">
         {/* Main Footer Grid */}
         <div className="footer-main-grid" style={{ 
@@ -36,25 +36,30 @@ export default function Footer() {
           
           {/* Column 1: Company Info */}
           <div style={{ display: "flex", flexDirection: "column", gap: "25px" }}>
-            <div style={{ 
-              background: "white",
-              padding: "10px 14px",
-              borderRadius: "10px",
-              width: "fit-content",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              boxShadow: "0 6px 20px rgba(0,0,0,0.2)"
-            }}>
-              <Image 
-                src="/main-logo.png" 
-                alt="Shree Ganesh Engimach" 
-                width={200}
-                height={56}
-                style={{ objectFit: "contain", display: "block" }} 
-                priority
-              />
-            </div>
+            <Link href="/" style={{ textDecoration: "none", display: "inline-block" }}>
+              <div style={{ 
+                position: "relative", 
+                width: "140px", 
+                height: "77px",
+                transition: "transform 0.3s ease"
+              }}
+              onMouseOver={(e) => {
+                (e.currentTarget as HTMLElement).style.transform = "translateY(-3px)";
+              }}
+              onMouseOut={(e) => {
+                (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
+              }}
+              >
+                <Image 
+                  src="/main-logo-dark-v2.png" 
+                  alt="Shree Ganesh Engimach" 
+                  fill
+                  sizes="140px"
+                  style={{ objectFit: "contain" }} 
+                  priority
+                />
+              </div>
+            </Link>
             
             <p style={{ 
               color: "rgba(255,255,255,0.7)", 
@@ -91,10 +96,12 @@ export default function Footer() {
                   }}
                   onMouseOver={(e) => {
                     (e.currentTarget as HTMLElement).style.background = social.color;
+                    (e.currentTarget as HTMLElement).style.color = "white";
                     (e.currentTarget as HTMLElement).style.transform = "translateY(-5px)";
                   }}
                   onMouseOut={(e) => {
                     (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.08)";
+                    (e.currentTarget as HTMLElement).style.color = "white";
                     (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
                   }}
                 >
@@ -106,7 +113,7 @@ export default function Footer() {
 
           {/* Column 2: Quick Links */}
           <div style={{ paddingTop: "10px" }}>
-            <h4 style={{ fontSize: "1.1rem", fontWeight: 700, marginBottom: "25px", textTransform: "uppercase", letterSpacing: "1px" }}>Quick Links</h4>
+            <h4 style={{ fontSize: "1.1rem", fontWeight: 700, marginBottom: "25px", textTransform: "uppercase", letterSpacing: "1px", color: "white" }}>Quick Links</h4>
             <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "12px" }}>
               {quickLinks.map((link) => (
                 <li key={link.href}>
@@ -134,7 +141,7 @@ export default function Footer() {
 
           {/* Column 3: Our Products */}
           <div style={{ paddingTop: "10px" }}>
-            <h4 style={{ fontSize: "1.1rem", fontWeight: 700, marginBottom: "25px", textTransform: "uppercase", letterSpacing: "1px" }}>Our Products</h4>
+            <h4 style={{ fontSize: "1.1rem", fontWeight: 700, marginBottom: "25px", textTransform: "uppercase", letterSpacing: "1px", color: "white" }}>Our Products</h4>
             <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "12px" }}>
               {productLinks.map((link) => (
                 <li key={link.href}>
@@ -162,7 +169,7 @@ export default function Footer() {
 
           {/* Column 4: Contact Info */}
           <div style={{ paddingTop: "10px" }}>
-            <h4 style={{ fontSize: "1.1rem", fontWeight: 700, marginBottom: "25px", textTransform: "uppercase", letterSpacing: "1px" }}>Contact Us</h4>
+            <h4 style={{ fontSize: "1.1rem", fontWeight: 700, marginBottom: "25px", textTransform: "uppercase", letterSpacing: "1px", color: "white" }}>Contact Us</h4>
             <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
               <div style={{ display: "flex", gap: "12px" }}>
                 <FiMapPin style={{ color: "#42a5f5", flexShrink: 0, marginTop: "4px" }} size={18} />
@@ -182,8 +189,8 @@ export default function Footer() {
 
               <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
                 <FiMail style={{ color: "#42a5f5" }} size={18} />
-                <a href="mailto:rishipanchal1999@gmail.com" style={{ color: "rgba(255,255,255,0.73)", textDecoration: "none", fontSize: "0.9rem" }}>
-                  rishipanchal1999@gmail.com
+                <a href="mailto:jkpanchal3491@gmail.com" style={{ color: "rgba(255,255,255,0.73)", textDecoration: "none", fontSize: "0.9rem" }}>
+                  jkpanchal3491@gmail.com
                 </a>
               </div>
 
@@ -216,17 +223,9 @@ export default function Footer() {
         </div>
       </div>
 
-      <div style={{ background: "rgba(0,0,0,0.3)", padding: "20px 0", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
-        <div className="container-custom" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "15px" }}>
-          <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
-            <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "0.85rem", margin: 0 }}>
-              © {new Date().getFullYear()} Shree Ganesh Engimach. All rights reserved.
-            </p>
-            <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.8rem", margin: 0, fontWeight: 600 }}>
-              GSTIN: 24FGYPP3784D1Z0
-            </p>
-          </div>
-          <div style={{ display: "flex", gap: "20px" }}>
+      <div style={{ background: "rgba(0,0,0,0.3)", padding: "30px 0", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
+        <div className="container-custom" style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "20px", textAlign: "center" }}>
+          <div style={{ display: "flex", gap: "20px", justifyContent: "center" }}>
             {[
               { label: "Privacy Policy", href: "/privacy-policy" },
               { label: "Terms", href: "/terms" },
@@ -237,6 +236,16 @@ export default function Footer() {
                  onMouseOut={(e) => (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.6)"}
               >{item.label}</Link>
             ))}
+          </div>
+
+          <div style={{ width: "100%", maxWidth: "400px" }}>
+            <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "0.85rem", margin: 0 }}>
+              © {new Date().getFullYear()} Shree Ganesh Engimach. All rights reserved.
+            </p>
+            <hr style={{ border: "none", borderTop: "1px solid rgba(255,255,255,0.1)", margin: "12px 0" }} />
+            <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.8rem", margin: 0, fontWeight: 600, letterSpacing: "1px" }}>
+              GSTIN: 24FGYPP3784D1Z0
+            </p>
           </div>
         </div>
       </div>

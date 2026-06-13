@@ -314,15 +314,15 @@ export default function ProductsClient() {
         </div>
         <style jsx>{`
           .product-card {
-            transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1) !important;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
           }
           .product-card:hover {
-            transform: translateY(-12px) scale(1.02) !important;
-            box-shadow: 0 40px 80px rgba(15,61,94,0.12) !important;
-            border-color: rgba(15,61,94,0.1) !important;
+            transform: translateY(-8px) !important;
+            box-shadow: 0 30px 60px rgba(10, 15, 29, 0.08) !important;
+            border-color: var(--secondary) !important;
           }
           .product-card:hover .product-image-container {
-            transform: scale(1.08);
+            transform: scale(1.05);
           }
         `}</style>
       </section>
